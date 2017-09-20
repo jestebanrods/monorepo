@@ -1,0 +1,16 @@
+// Equivalente al GROUP BY
+// Agrupa todos los documentos en la colección
+// mediante el atributo "nombre", es posible crear
+// otro atributo para contar cuantos agrupo por atributo
+db.usuarios.aggregate([{
+	$group:{
+		_id:"$nombre", 
+		"repetidos":{$sum:1}, 
+		"suma":{$sum:"$edad"},
+		"promedio":{$avg:"$edad"}
+	}
+}])
+
+// Propiedades
+// Suma $sum
+// Promedio $avg

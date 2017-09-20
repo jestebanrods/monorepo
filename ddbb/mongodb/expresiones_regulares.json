@@ -1,0 +1,9 @@
+// Equivalente al LIKE en SQL (%J% -> /J/)
+// Busca que contenga la expresión, da igual en donde
+db.usuarios.find({nombre:/J/});
+
+// $ para buscar los que finalicen con la expresión
+db.usuarios.find({correo:/.com$/});
+
+// ^ para buscar los que conmiencen con la expresión
+db.usuarios.find({nombre:/^J/});

@@ -1,0 +1,15 @@
+// Un cursor es un objeto que devuelve el método find
+// Este cursor solo se puede usar una vez y posee varios métodos
+var cursor = db.usuarios.find()
+
+// Métodos
+cursor.count();
+cursor.forEach(function(d) {});
+// Ordena los registros, 1 Ascendente, -1 Descendente
+// en función del atributo escogido
+cursor.sort({ atributo:x, atributo:x });
+// Limíta en n el número de registros a mostrar
+cursor.limit(n);
+// Saltarser los primeros n registros
+cursor.skip(n);
+cursor.size();

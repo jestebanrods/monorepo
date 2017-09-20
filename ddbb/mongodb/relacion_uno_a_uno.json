@@ -1,0 +1,19 @@
+// Documentos Embebidos
+// Relación 1 a 1 directamente en docuemnto
+var alumno = {
+	nombre: "Jossie",
+	apellido: "Rodrígueza",
+	edad: 24,
+	sexo: "M",
+	matricula: {
+		numero: "12345",
+		año: "2017",
+		renovar: false
+	}
+}
+
+// =============== CONSULTAS =================
+db.usuarios.find(
+	{"matricula.numero":"12345"},
+	{"matricula.numero":1, _id:0}
+);

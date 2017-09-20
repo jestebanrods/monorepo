@@ -1,0 +1,17 @@
+// Definir una nueva colección
+db.createCollection("nombre");
+
+db.createCollection("personas", {
+	validator: { $and:
+		[
+			{ nombre: {$type: "string"} },
+			{ sexo: {$in: ["M", "F"]} },
+			{ email:{$regex:/@/} },
+			{ telefono: {$exists:false} }
+		]
+	}
+});
+
+// La bbdd marca error 121 cuando se intenta insertar
+// un dato que no es del tipo que espera la colección
+// Las palabras reservadas en MongoDB empizan con $

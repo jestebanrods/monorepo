@@ -1,0 +1,7 @@
+documento = {
+	string:"Jossie",
+	numero:22,
+	real:22.5,
+	booleano:true,
+	fecha:new Date()
+}

@@ -1,0 +1,78 @@
+// Array de documentos embebidos
+var alumno = {
+	nombre: "Jossie",
+	apellido: "Rodrígueza",
+	edad: 24,
+	sexo: "M",
+	matricula: {
+		numero: "12345",
+		año: "2017",
+		renovar: false
+	},
+	direcciones:[
+		{
+			direccion: "Calle 60A #18B-05",
+			barrio: "Galán Gómez",
+			ciudad: "Barrancabermeja"
+		},
+		{
+			direccion: "Carrera 30 #20-45",
+			barrio: "La Milagrosa",
+			ciudad: "Medellín"
+		}
+	]
+}
+
+
+// ===================== BUSQUEDA ====================
+// El método pretty() al final de la consulta hace que pueda
+// ser leible el contenido en el terminal
+db.usuarios.find({
+	direcciones: {
+		$elemMatch:{
+			barrio: "La Milagrosa"
+		}
+	}
+});
+
+// Al usar el $, extrae los subdocumentos
+// que cumplan la condición inicial
+db.usuarios.find(
+	{"direcciones.ciudad": "Medellín"},
+	{
+		_id:0,
+		"direcciones.$":1
+	}
+);
+
+db.usuarios.find(
+ 	{"direcciones.ciudad": "Medellín"}, 
+ 	{
+ 		_id:0, 
+ 		direcciones:{
+ 			$elemMatch:{direccion:"PP"}
+ 		}
+ 	}
+ );
+
+
+// ========================= INSERTAR =======================
+db.usuarios.update(
+	{ sexo:"M"}, 
+	{
+		$addToSet: {
+			direcciones: {
+				direccion:"PP",
+				barrio:"La Milagrosa",
+				ciudad:"Medellín"
+			}
+		}
+	}
+);
+
+// ========================= ACTUALIZAR ========================= 
+
+db.usuarios.update(
+	{ "direcciones.direccion":"PP" }, 
+	{ $set: {"direcciones.$.barrio": "El Poblado"} }
+);

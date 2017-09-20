@@ -1,0 +1,32 @@
+// Ver todas las bbdd
+show databases
+
+// Usar una bbdd Si no existe una bbdd con ese nombre
+// se creará una nueva en la memoria RAM y no en disco
+use nueva_bbdd
+
+// Crear documentos
+usuario = {
+	nombre: "Jossie",
+	edad: 24
+}
+
+// Almacenar documentos
+// Si no se ah creado la colección usuarios
+// mongo las creará automaticamente
+db.usuarios.insert(usuario)
+
+// Al usar un bbdd e inserta un documento en ella, verifica si esta
+// existe, en caso de no existir la crea.
+
+// Ver las colecciones
+show collections
+
+// Vaciar colección
+db.usuarios.remove({})
+
+// Eliminar colección
+db.usuarios.drop()
+
+// Eliminar bbdd
+db.dropDatabase()

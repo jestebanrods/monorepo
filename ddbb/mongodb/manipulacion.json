@@ -1,0 +1,72 @@
+// Ver documentos de una colección
+db.usuarios.find()
+
+// Ver el primer documento de la colección
+db.usuarios.findOne()
+
+// Es posible almacenar documentos en variables JavaScript
+var documento = db.usuarios.findOne()
+
+// Condicionales WHERE
+db.usuarios.find({ nombre:"Jossie" })
+
+// Condicional con varios parametros WHERE - AND
+db.usuarios.find({ nombre:"Jossie", edad:24})
+
+// Condicional WHERE NOT
+// Se usa la variable reservada $ne (no equals)
+db.usuarios.find({ edad:{$ne:56} })
+
+// Insertar varios documentos a la vez
+db.usuarios.insert([
+{nombre:"Jossie", edad:24},
+{nombre: "Valentina", edad:14}
+])
+
+// Extrar unicamente un campo
+db.usuarios.find({ nombre:"Jossie" }).edad
+
+// Actualizar documentos (SAVE)
+// Pasos
+// 1. Se busca el documento a modificar y se almacena en una variable
+var modificar = db.usuarios.findOne({ nombre:"Valentina" })
+// 2. Se sobrescribe el campo a modificar
+modificar.nombre = "Vale"
+// 3. En caso de querer agregar un campo mas
+modificar.campo_nuevo = "valor del campo"
+// 4. Se guarda la modificación
+db.usuarios.save(modificar)
+
+// Actualizar documentos (UPDATE)
+// Se usan los mismos pasos 1,2,3 anteriores y luego
+// Dentro de corchetes se especifica a quien se va a modificar
+db.usuarios.update({nombre: "Jossie"}, modificar)
+
+// Actualizar todos los documentos
+db.usuarios.update({nombre:"Jossie"}, {$set: {edad:20}}, {multi:true})
+
+// Eliminar un campo
+// Ejemplo: Eliminar el campo edad en todos los registros
+db.usuarios.update({}, {$unset: {edad:1}}, {multi:true})
+db.usuarios.update({}, {$unset: {edad:true}}, {multi:true})
+
+// Eliminar un atributo de un JSON
+delete objeto.atributo
+
+// Eliminar documentos
+// No es necesario usar el atributo multi, el elimina todo lo relacionado
+// con el filtro aplicado
+db.usuarios.remove({nombre:"Jossie"})
+
+// Filtrar que campos mostrar
+db.usuarios.find({}, {nombre:1, _id:0})
+
+// Operadores de comparación
+$gt  >
+$gte >=
+$lt <
+$lte <=
+db.usuarios.find({edad:{$gt:20}})
+
+// Condicional BETWEEN
+db.usuarios.find({edad:{$gt:10, $lt:52}})

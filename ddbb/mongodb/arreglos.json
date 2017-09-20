@@ -1,0 +1,59 @@
+// Método update
+// 1er parámetro condición where (¿Quien se va a modificar?)
+// 2do parámetro el valor/atributo nuevo a modificar o agregar
+// 3er parámetro multi-registros (¿A todos los registros que cumplan?)
+
+// ======================== INSERTAR =========================
+// De igual manera que se puedem agregar elementos nativos
+// como objetos, tambien pueden agregarse arrays
+var valores = [1, 2, 3];
+var usuario = {
+	nombre:"Jossie",
+	valores: valores
+}
+
+db.pruebas.insert(usuario);
+
+// El método $addToSet comprueba si el valor a agregar existe
+// si no existe lo agrega
+db.pruebas.update({}, { $addToSet:{valores:5} });
+// En caso de querer repetir un mismo valor se usa el 
+// método $push
+db.pruebas.update({}, { $push:{valores:5} });
+
+// En caso de querer agregar varios valores
+var nuevosValores = [10, 23, 4];
+db.pruebas.update({}, { 
+	$addToSet:{
+		valores:{ $each:nuevosValores }
+	} 
+});
+
+db.pruebas.update({}, { 
+	$addToSet:{
+		valores:{ $each:nuevosValores },
+		apellidos:"rodriguez"
+	} 
+});
+
+// ======================== ELIMINAR =========================
+db.pruebas.update({}, { 
+	$pull:{valores:3} 
+});
+
+// Para eliminar varios valores, incluido repetidos
+db.pruebas.update({}, { 
+	$pullAll:{valores:[3, 4]} 
+});
+
+// ===================== SELECCIÓN DE ELEMENTOS =====================
+// Con el método $slice, se extraen los primeros n cantidad de valores
+// usando n negativo se empiza desde el final del array
+// una variante es indicar en un array el indice de incio, final
+db.pruebas.find({nombre:"Jossie"}, {valores: {$slice:n}})
+db.pruebas.find({nombre:"Jossie"}, {valores: {$slice:[i, f]}})
+
+// Con el método $in, se puede filtrar la busqueda a los registros, que dentro
+// de un array contengan alguno de los elementos, $nin para negarlo
+db.pruebas.find({nombre:{$in:[1, 2]}})
+db.pruebas.find({nombre:{$nin:[1, 2]}})

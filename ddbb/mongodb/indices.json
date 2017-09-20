@@ -1,0 +1,7 @@
+// Para saber cuanto tiempo en ms se demora una consulta
+db.usuarios.find().explain("executionStats").executionStats.executionTimeMillis;
+
+// La indexación permite realizar las consultas mucho más rápido
+// por ello hay que medir el tiempo para realizarlas
+db.usuarios.createIndex({nombre:1});
+// Indexar es almacenar datos en RAM para mayor velocidad

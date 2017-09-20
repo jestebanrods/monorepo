@@ -1,0 +1,20 @@
+// 1. Ubicarse en la carpeta a contener el respaldo
+
+// 2. Ejecutar la aplicación bajo el comando
+mongodump --db <nombre>
+mongodump --db nueva_bbdd
+// Al ejecutar el comando, se crear una carpeta dump
+// que en su interior crea la carpeta con el nombre de la 
+// bbdd restaurada y posee dos archivos por cada colección
+// uno con extensión .bson y otro .json
+
+// 3. Para restaurar un bbdd
+mongorestore --db <nombre> <ruta>
+mongorestore --db nueva_bbdd /dump/nueva_bbdd
+
+// ============================================
+
+// 1. Respaladar una colección
+mongodump --collection <nombre> --db <nombre>
+// 2. Restaurar la colección
+mongorestore --collection <nombre> --db <nombre> <ruta/nombre.bson>
