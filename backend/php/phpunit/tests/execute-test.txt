@@ -1,0 +1,16 @@
+﻿
+// Probar un método especifico de algun test
+vendor/bin/phpunit --bootstrap --colors="always" src/Email.php tests/TestEmail.php
+
+
+
+
+// Probar todos los tests que esten en la carpeta con el mismo nombre
+vendor/bin/phpunit tests --colors=always
+
+vendor/bin/phpunit tests/TestEmail --filter test_can_be_created_from_valid_email_address
+vendor/bin/phpunit tests/TestCarController --filter test_it_can_get_ready_the_car --colors="always"
+
+vendor/bin/phpunit tests/TestEmail --filter test_can_be_created_from_valid_email_address
+vendor/bin/phpunit tests/TestCarController --filter test_it_can_get_ready_the_car --colors="always"
+

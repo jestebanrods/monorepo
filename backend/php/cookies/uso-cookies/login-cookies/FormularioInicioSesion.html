@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulario Iniciar Sesión</title>
+    </head>
+    <body>
+		<h1>Inicio Sesión</h1>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <table>
+                <tr>
+                    <td><b>Usuario:</b></td>
+                    <td><input type="text" name="user"></td>
+                </tr>
+                <tr>
+                    <td><b>Contraseña:</b></td>
+                    <td><input type="password" name="pass"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="recordar">Recordar</td>
+                    <td><input type="submit" value="Iniciar Sesión" name="enviar"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "rsprtl/php-unit",
+  "license": "MIT",
+  "require": {
+    "mongodb/mongodb": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1",
+    "fzaninotto/faker": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "jestebanrs\\": "src/",
+      "jestebanrsTest\\": "test/"
+    }
+  }
+}

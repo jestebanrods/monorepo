@@ -1,0 +1,24 @@
+{
+    "name": "test/request",
+    "description": "Test of request module",
+    "type": "no",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jossie Esteban Rodríguez Salazar",
+            "email": "test@mail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^3.2",
+        "symfony/routing": "^3.2"
+    },
+    "autoload":{
+        "psr-4":{
+	       "jestebanrs\\":"src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}

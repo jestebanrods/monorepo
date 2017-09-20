@@ -1,0 +1,7 @@
+Borrar: DELETE FROM $db_tabla WHERE ID='$id'
+Insertar: INSERT INTO $db_tabla (ID,Componentes,Cantidad,Encapsulado,Tipo) 
+	  values ($id,'$componente',$cantidad,'$encapsulado','$tipo')
+Consultar: SELECT * FROM $db_tabla WHERE Componentes LIKE '%$busqueda%'
+Actualizar: UPDATE $db_tabla SET Cantidad=5 where id=1
+
+$db_tabla=electronics_components

@@ -1,0 +1,34 @@
+{
+    "camilo": {
+        "company": "Hahn - McCullough",
+        "username": "Herminia_Little70",
+        "password": "r7FUZHXro9Xmi1E",
+        "role": "user",
+        "phone": "(858) 660-4120",
+        "cell": "(972) 620-6718"
+    },
+    "carolina": {
+        "company": "Nolan - Dare",
+        "username": "Alfreda_Schimmel81",
+        "password": "03G1cpCxYTeu1xF",
+        "role": "user",
+        "phone": "(155) 942-3573",
+        "cell": "(972) 424-0010"
+    },
+    "andres": {
+        "company": "Welch Group",
+        "username": "Lemuel72",
+        "password": "Q0_13T6pRcDE0Wg",
+        "role": "guest",
+        "phone": "(693) 939-7185",
+        "cell": "(214) 647-2175"
+    }, 
+    "fernando": {
+        "company": "Wiegand, Bartoletti and Kunze",
+        "username": "Nadia18",
+        "password": "8JQHljdhSkk5egj",
+        "role": "guest",
+        "phone": "(476) 734-8187",
+        "cell": "(214) 119-4764"
+    }
+}

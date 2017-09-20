@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Insertar Registros</title>
+        <style>
+			body{
+				background-color:#D4E3FB;
+			}
+			table{
+				margin:auto;
+				border:#000000 double;
+				padding: 10px;
+			}
+			h2{
+				margin:auto;
+				text-align:center;
+				margin-bottom:25px;
+				margin-top:15px;
+			}
+        </style>
+    </head>
+    <body>
+        <h2>Insertar Componente</h2>
+        <form action="PaginaInsertarPDO.php" method="get">
+            <table>
+                <tr>
+                    <td>ID: </td>
+                    <td><input type="number" name="id"></td>
+                </tr>
+                <tr>
+                    <td>Componente: </td>
+                    <td><input type="text" name="compo"></td>
+                </tr>
+                <tr>
+                    <td>Cantidad: </td>
+                    <td><input type="number" name="can"></td>
+                </tr>
+                <tr>
+                    <td>Encapsulado: </td>
+                    <td><input type="text" name="enca"></td>
+                </tr>
+                <tr>
+                    <td>Tipo: </td>
+                    <td>
+                        <select name="tipo">
+                            <option>Analógico</option>
+                            <option>Digital</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit">&nbsp;&nbsp;<input type="reset"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

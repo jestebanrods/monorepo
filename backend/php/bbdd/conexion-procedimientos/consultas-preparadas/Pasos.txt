@@ -1,0 +1,8 @@
+1. Crear secuencia SQL sustituyendo los criterios(valores) por un "?".
+2. Preparar la consulta con la función mysqli_prepare($conexión, $secuenciaSQL). Devuelve objeto mysqli_stmt.
+3. Unir parametros a la secuancia SQL a tarvez de la función. Esta devuelve true o false. 
+   mysqli_stmt_bind_param($objeto devuelto por mysqli_prepare, tipo dato del criterio, variable del criterio)
+4. Ejecutar la consulta con la función mysqli_stmt_execute($objeto mysqli_stmt..). Devuelve true o false.
+5. Asociar variables al resultado de la consulta con la función. Devuelve true o false.
+   mysqli_stmt_bind_result($objeto mysqli_stmt.. , tantas variables como el número de columnas de la consulta).
+6. Leer los valores con la función mysqli_stmt_fetch($objeto mysqli_stmt..).

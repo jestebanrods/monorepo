@@ -1,0 +1,295 @@
+[
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775679f29c6801008ce63b",
+    "movil": 759,
+    "tiempo": 4,
+    "driver": 1095822648,
+    "timestamp": 1500913155,
+    "duracion": 17,
+    "estado": 1,
+    "frecuencia": 1,
+    "cliente": {
+      "nombre": "almacen",
+      "telefono": 76437543,
+      "email": null,
+      "dir": {
+        "D": "carrera 35 número 52 75",
+        "I": "",
+        "B": "",
+        "M": "bucaramanga"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.1123352888976,
+        "lon": -73.109097754879
+      },
+      "sector": 1091
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775679f29c6801008ce63b",
+    "movil": 759,
+    "tiempo": 4,
+    "driver": 1095822648,
+    "timestamp": 1500992245,
+    "duracion": 17,
+    "estado": 1,
+    "frecuencia": 6,
+    "cliente": {
+      "nombre": "almacen",
+      "telefono": 76437543,
+      "email": null,
+      "dir": {
+        "D": "carrera 35 número 52 75",
+        "I": "",
+        "B": "",
+        "M": "bucaramanga"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.1123352888976,
+        "lon": -73.109097754879
+      },
+      "sector": 1091
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775679f29c6801008ce63b",
+    "movil": 759,
+    "tiempo": 4,
+    "driver": 1095822648,
+    "timestamp": 1500923145,
+    "duracion": 17,
+    "estado": 1,
+    "frecuencia": 6,
+    "cliente": {
+      "nombre": "almacen",
+      "telefono": 76437543,
+      "email": null,
+      "dir": {
+        "D": "carrera 35 número 52 75",
+        "I": "",
+        "B": "",
+        "M": "bucaramanga"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.1123352888976,
+        "lon": -73.109097754879
+      },
+      "sector": 1091
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775679f29c6801008ce63b",
+    "movil": 759,
+    "tiempo": 4,
+    "driver": 1095822648,
+    "timestamp": 1500993145,
+    "duracion": 17,
+    "estado": 1,
+    "frecuencia": 6,
+    "cliente": {
+      "nombre": "almacen",
+      "telefono": 76437543,
+      "email": null,
+      "dir": {
+        "D": "carrera 35 número 52 75",
+        "I": "",
+        "B": "",
+        "M": "bucaramanga"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.1123352888976,
+        "lon": -73.109097754879
+      },
+      "sector": 1091
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "597756d5f29c6801008ce64c",
+    "movil": 932,
+    "tiempo": 6,
+    "driver": 13826750,
+    "timestamp": 1500993237,
+    "duracion": 12,
+    "estado": 1,
+    "frecuencia": 6,
+    "cliente": {
+      "nombre": "barrera",
+      "telefono": 76484883,
+      "email": null,
+      "dir": {
+        "D": "carrera 33 número 196 103",
+        "DI": "casa 18 e ",
+        "C": "paraguitas 1",
+        "CI": "",
+        "B": "florida",
+        "M": "floridablanca"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.0656963395646,
+        "lon": -73.087132688569
+      },
+      "sector": 2000
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "597756d7f29c6801008ce64d",
+    "movil": 1090,
+    "tiempo": 4,
+    "driver": 1098733815,
+    "timestamp": 1500993239,
+    "duracion": 35,
+    "estado": 1,
+    "frecuencia": 1,
+    "cliente": {
+      "nombre": "niño",
+      "telefono": 3152095771,
+      "email": null,
+      "dir": {
+        "D": "",
+        "B": "",
+        "M": "bucaramanga",
+        "C": "cristal bajo",
+        "CI": "",
+        "DI": "el parque"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.0721564192911,
+        "lon": -73.121020315837
+      },
+      "sector": 1301
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775715f29c6801008ce652",
+    "movil": 201,
+    "tiempo": 4,
+    "driver": 5698348,
+    "timestamp": 1500993301,
+    "duracion": 5,
+    "estado": 1,
+    "frecuencia": 6,
+    "cliente": {
+      "nombre": "picon",
+      "telefono": 76515612,
+      "email": null,
+      "dir": {
+        "D": "calle 99 número 21 43",
+        "I": "",
+        "B": "fontana",
+        "M": "bucaramanga"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lon": -73.116790662766,
+        "lat": 7.0885389078909
+      },
+      "sector": 1301
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775718f29c6801008ce653",
+    "movil": 1168,
+    "tiempo": 4,
+    "driver": 91463877,
+    "timestamp": 1500993304,
+    "duracion": 38,
+    "estado": 1,
+    "frecuencia": 6,
+    "cliente": {
+      "nombre": "ALVAREZ *",
+      "telefono": 76397756,
+      "email": null,
+      "dir": {
+        "D": "transversal 25 número 1 341",
+        "I": "por_el ministerio_de obras publicas",
+        "B": "buenos aires",
+        "M": "floridablanca"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lat": 7.0566336214232,
+        "lon": -73.089106742726
+      },
+      "sector": 2004
+    }
+  }
+},
+{
+  "action": "js_registrar_movil_bien",
+  "data": {
+    "id": "59775767f29c6801008ce667",
+    "movil": 207,
+    "tiempo": 4,
+    "driver": 91232873,
+    "timestamp": 1500993383,
+    "duracion": 8,
+    "estado": 1,
+    "frecuencia": 1,
+    "cliente": {
+      "nombre": "maria teresa ",
+      "telefono": 76307229,
+      "email": null,
+      "dir": {
+        "D": "carrera 4 número 37 24",
+        "I": "",
+        "B": "la joya",
+        "M": "bucaramanga"
+      },
+      "destino": false,
+      "categoria": 2,
+      "codigo": 0,
+      "coords": {
+        "lon": -73.135522503129,
+        "lat": 7.1146038749985
+      },
+      "sector": 1008
+    }
+  }
+}
+
+]
