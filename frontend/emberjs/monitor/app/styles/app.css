@@ -1,0 +1,19 @@
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.table-center, th {
+  text-align: center;
+}
+
+.vertical-align {
+  vertical-align: middle !important;
+}

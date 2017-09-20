@@ -1,0 +1,12 @@
+<h2>Autocomplete</h2>
+<h3>{{person}}</h3>
+
+<div class="col-md-4">
+  {{#power-select
+    selected=person
+    options=names
+    onchange=(action (mut person))
+    onkeydown=(action "consultAjax") as |name|}}
+    {{name}}
+  {{/power-select}}
+</div>

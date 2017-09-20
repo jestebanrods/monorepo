@@ -1,0 +1,23 @@
+<!--Barra Navengación-->
+<nav class="navbar navbar-inverse navbar-static-top strong">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">Monitor Central</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a>Registro</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a>{{model.online}}</a></li>
+        <li><a href="">Jossie Rodríguez</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Contenido-->
+<div class="container-fluid">
+  {{assigned-dp asignados=model.assigned}}
+  {{services-dp servicios=model.services asignados=model.all_assigned}}
+</div>

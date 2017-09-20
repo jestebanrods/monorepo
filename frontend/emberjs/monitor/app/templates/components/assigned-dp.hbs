@@ -1,0 +1,58 @@
+<div class="panel panel-success">
+  <!-- Panel Contents -->
+  <div class="panel-heading strong">Últimos Servicios Asignados</div>
+  <!-- Table -->
+  <table class="table table-bordered table-condensed">
+    <thead>
+    <tr class="table-center">
+      <th style="width: 2%">#</th>
+      <th style="width: 2%">F</th>
+      <th style="width: 22%">Nombre</th>
+      <th style="width: 8%">Teléfono</th>
+      <th>Dirección</th>
+      <th style="width: 13%">Asignado</th>
+      <th style="width: 4%">M</th>
+      <th style="width: 2%">T</th>
+      <th style="width: 8%">Transcurrido</th>
+      <th style="width: 2%">A</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each asignados as |item|}}
+
+      <tr>
+        <!--#-->
+        <td class="text-center vertical-align"></td>
+        <!--Frecuencia-->
+        <td class="text-center vertical-align">{{item.frecuencia}}</td>
+        <!--Nombre Cliente-->
+        <td class="vertical-align">{{item.cliente.nombre}}</td>
+        <!--Número Telefónico-->
+        <td class="text-center vertical-align">{{item.cliente.telefono}}</td>
+        <!--Dirección-->
+        <td class="vertical-align">
+          <div>
+            <span>{{item.cliente.dir.D}}</span>
+            <span>{{item.cliente.dir.DI}}</span>
+            <span>{{item.cliente.dir.I}}</span>
+            <span class="label label-success">{{item.cliente.dir.C}}</span>
+            <span class="label label-primary">{{item.cliente.dir.B}}</span>
+            <span class="label label-default">{{item.cliente.dir.M}}</span>
+          </div>
+        </td>
+        <!--Fecha Asignación-->
+        <td class="text-center vertical-align">{{transform-datetime item.timestamp}}</td>
+        <!--Número Movil-->
+        <td class="text-center vertical-align">{{item.movil}}</td>
+        <!--Tiempo A Llegar-->
+        <td class="text-center vertical-align">{{item.tiempo}}</td>
+        <!--Tiempo Transcurrido-->
+        <td class="text-center vertical-align"></td>
+        <!--A-->
+        <td class="text-center vertical-align"></td>
+      </tr>
+
+    {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,24 @@
+<!-- Fixed Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ember Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'index' class="button"}}Index{{/link-to}}</li>
+        <li>{{#link-to 'jers' class="button"}}Jers{{/link-to}}</li>
+        <li>{{#link-to 'rtlsa' class="button"}}RTLSA{{/link-to}}</li>
+        <li>{{#link-to 'simcards' class="button"}}Simcards{{/link-to}}</li>
+        <li>{{#link-to 'autocomplete' class="button"}}Autocomplete{{/link-to}}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Container -->
+<div class="container">
+  <div class="">
+    {{outlet}}
+  </div>
+</div>

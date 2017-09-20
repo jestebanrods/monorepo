@@ -1,0 +1,4 @@
+ember-bootstrap
+ember-power-select
+ember-fakerjs
+ember-truth-helpers
