@@ -1,0 +1,79 @@
+- hosts: localhost
+  become: true
+  connection: local
+
+  tasks:
+    - name: Update Cache & Upgrade Apt
+      apt:
+        update_cache: true
+        upgrade: full
+        autoremove: true
+
+    - name: Programming Languages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - default-jre
+        - default-jdk
+        - golang-go
+        - php7.1
+        - php7.1-common
+        - php7.1-imap
+        - php7.1-odbc
+        - php7.1-soap
+        - php7.1-xml
+        - php7.1-curl
+        - php7.1-mbstring
+        - php7.1-opcache
+        - php7.1-readline
+        - php7.1-sqlite3
+        - php7.1-cgi
+        - php7.1-dba
+        - php7.1-mcrypt
+        - php7.1-pgsql
+        - php7.1-cli
+        - php7.1-dev
+        - php7.1-json
+        - php7.1-mysql
+        - php7.1-phpdbg
+        - php7.1-zip
+        - php7.1-tokenizer
+        - php-mongodb
+        - mongodb-org
+        - heroku
+        - ansible
+        - docker-engine
+
+    - name: Development Dependencies
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - curl
+        - git
+        - git-core
+        - software-properties-common
+        - vim
+        - guake
+        - htop
+        - jq
+        - code
+        - build-essential
+        - python-pip
+
+    - name: Python Dependencies
+      pip:
+        name: docker-py
+        state: present
+
+    - name: Finish Configuration
+      shell: ./dependencies.sh
+    
+    - name: Delete Trash Files
+      file:
+        path: ./{{ item }}
+        state: absent
+      with_items:
+        - playbook.languajes.retry
+    

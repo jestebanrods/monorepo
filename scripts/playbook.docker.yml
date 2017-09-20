@@ -1,0 +1,26 @@
+- hosts: localhost
+  become: true
+  connection: local
+
+  tasks:
+    - name: Update Cache & Upgrade Apt
+      apt:
+        update_cache: true
+        upgrade: full
+        autoremove: true
+
+    - name: Pull Docker Images
+      command: docker pull {{ item }}
+      with_items:
+       - ubuntu
+       - alpine
+       - magiconair/fabio
+       - gliderlabs/registrator
+       - gliderlabs/consul-server
+       - mongo
+       - redis
+       - mariadb
+       - php:alpine
+       - httpd
+       - sebp/lighttpd
+

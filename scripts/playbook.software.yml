@@ -1,0 +1,20 @@
+- hosts: localhost
+  become: true
+  connection: local
+
+  tasks:
+    - name: Update Cache & Upgrade Apt
+      apt:
+        update_cache: true
+        upgrade: full
+        autoremove: true
+
+    - name: Install Software
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - zeal
+        - spotify-client
+        - grub-customizer
+
