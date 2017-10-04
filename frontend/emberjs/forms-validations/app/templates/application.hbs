@@ -1,0 +1,57 @@
+{{#if (eq model.notify 'success') }}
+<div class="alert alert-success" role="alert">{{ model.msg }}</div>
+{{/if }}
+{{#if (eq model.notify 'info') }}
+<div class="alert alert-info" role="alert">{{ model.msg }}</div>
+{{/if }}
+{{#if (eq model.notify 'warning') }}
+<div class="alert alert-warning" role="alert">{{ model.msg }}</div>
+{{/if }}
+{{#if (eq model.notify 'danger') }}
+<div class="alert alert-danger" role="alert">{{ model.msg }}</div>
+{{/if }}
+
+{{model.notify}}
+
+<!--Formulario-->
+  <div class="margin-20-bottom">
+    <form>
+      <div class="form-group">
+        <!--Inputs Text-->
+        <div class="row pad-2-hor text-input-center text-center" id="forms-input">
+          <div class="col-md-2">
+            <label for="quantity">Cantidad</label>
+            <input class="form-control pad-5-vertical" name="quantity" id="_quantity">
+          </div>
+          <div class="col-md-2">
+            <label for="movil">Móvil</label>
+            <input class="form-control pad-5-vertical" name="movil" id="_movil">
+          </div>
+          <div class="col-md-2">
+            <label for="phone">Teléfono</label>
+            <input class="form-control pad-5-vertical" name="phone" id="_phone">
+          </div>
+          <div class="col-md-2">
+            <label for="dateInit">Fecha Inicio</label>
+            <input class="form-control pad-5-vertical" name="dateInit" placeholder="AAAA-MM-DD" id="_dateInit">
+          </div>
+          <div class="col-md-2">
+            <label for="dateEnd">Fecha Final</label>
+            <input class="form-control pad-5-vertical" name="dateEnd" placeholder="AAAA-MM-DD" id="_dateEnd">
+          </div>
+          <div class="col-md-1">
+            <label class="white-text">Buscar</label>
+            <button {{action "getData" model}} class="btn btn-primary strong" style="width: 100%">
+              <span class="fa fa-search fix-icon"></span>Buscar
+            </button>
+          </div>
+          <div class="col-md-1">
+            <label class="white-text">Limpiar</label>
+            <button {{action "clearAll" model}} class="btn btn-warning strong" style="width: 100%">
+              <span class="fa fa-trash fix-icon"></span>Limpiar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
