@@ -1,4 +1,3 @@
 #!/bin/sh
 
-ln -s /home/$USER/Dropbox/Scripts/ /home/$USER/
-
+ln -s $HOME/Documents/monorepo/scripts/ $HOME/Scripts
