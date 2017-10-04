@@ -44,6 +44,8 @@
         - heroku
         - ansible
         - docker-engine
+        - nodejs
+        - npm
 
     - name: Development Dependencies
       apt:
