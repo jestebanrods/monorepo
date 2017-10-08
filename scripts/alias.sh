@@ -1,20 +1,22 @@
 #!/bin/sh
 
-#Reiniciar configuración del bash
+#Reset Bash Config
 rm ~/.bashrc
 cp bashrc.cfg ~/
+cp bashprofile.cfg ~/
 cd
 mv bashrc.cfg .bashrc
+mv bashprofile.cfg .bashprofile
 
-#Auto cambio de directorio
+#Change Directory
 echo >> .bashrc
 echo shopt -s autocd >> .bashrc
 
-#Agregar los alias personalizados
+#Add Alias
 echo >> .bashrc
 
 echo alias lss=\'ls -1X\' >> .bashrc
-echo alias lsa=\'ls -1Sa\' >> .bashrc
+echo alias lsa=\'ls -1SXa\' >> .bashrc
 echo alias lh=\'ls -lhX\' >> .bashrc
 echo alias hc=\'history -c\' >> .bashrc
 

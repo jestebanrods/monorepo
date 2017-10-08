@@ -6,15 +6,17 @@
     - name: Update Cache & Upgrade Apt
       apt:
         update_cache: true
-        upgrade: full
+        upgrade: yes
         autoremove: true
 
     - name: Install Software
       apt:
         name: "{{ item }}"
-        state: present
       with_items:
-        - zeal
         - spotify-client
         - grub-customizer
 
+    - name: Delete Trash Files
+      file:
+        path: ./playbook.software.retry
+        state: absent

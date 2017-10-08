@@ -9,4 +9,3 @@ sudo mv composer.phar /usr/local/bin/composer
 composer global require "laravel/installer"
 
 sudo usermod -aG docker $USER
-

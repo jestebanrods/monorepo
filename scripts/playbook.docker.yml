@@ -6,7 +6,7 @@
     - name: Update Cache & Upgrade Apt
       apt:
         update_cache: true
-        upgrade: full
+        upgrade: yes
         autoremove: true
 
     - name: Pull Docker Images
@@ -18,9 +18,12 @@
        - gliderlabs/registrator
        - gliderlabs/consul-server
        - mongo
-       - redis
        - mariadb
        - php:alpine
        - httpd
        - sebp/lighttpd
 
+    - name: Delete Trash Files
+      file:
+        path: ./playbook.docker.retry
+        state: absent
