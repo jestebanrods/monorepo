@@ -1,0 +1,11 @@
+Ctrl+P : Buscar clase
+Ctrl+Shift+P : Buscar archivo
+Ctrl+F12 : Abrir arbol de resumen de clase
+Ctrl+Shift+A: Buscar en settings
+Alt+W: Cerrar ventana actual
+Ctrl+B: Ir a la clase en la que se está posicionado
+Ctrl+Shift+T: Crear test de la clase en la que se está
+Alt + Arriba/Abajo: Navegar entre los metodos de la clase
+Alt+Inicio: Navegar por las carpetas
+Alt+Insertar: Es como click en New
+
