@@ -1,6 +1,14 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.iconTheme": "file-icons",
     "editor.fontSize": 12,
-    "editor.fontLigatures": true
+    "workbench.startupEditor": "newUntitledFile",
+    "php.validate.enable": true,
+    "php.validate.executablePath": "/usr/bin/php",
+    "php.validate.run": "onType",
+    "workbench.iconTheme": "file-icons",
+    "namespaceResolver.showMessageOnStatusBar": true,
+    "namespaceResolver.autoSort": true,
+    "namespaceResolver.sortAlphabetically": false,
+    "namespaceResolver.leadingSeparator": true,
+    "php-cs-fixer.rules": "@Symfony"
 }
+

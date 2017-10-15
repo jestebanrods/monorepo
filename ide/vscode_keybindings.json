@@ -1,0 +1,18 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "command": "namespaceResolver.import",
+        "key": "ctrl+alt+i",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "namespaceResolver.expand",
+        "key": "ctrl+alt+e",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "namespaceResolver.sort",
+        "key": "ctrl+alt+s",
+        "when": "editorTextFocus"
+    }
+]

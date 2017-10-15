@@ -1,0 +1,16 @@
+PHP
+
+Extensiones
+PHP DocBlocker
+PHP Intellisense - Crane
+PHP Namespace Resolver
+php cs fixer
+TODO Highlight
+TWIG pack
+
+Configuraciones
+Copiar los settings
+Copiar los keybinding
+Instalar los stubs de Crane
+Rebuild la cache de Crane
+
