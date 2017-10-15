@@ -9,3 +9,9 @@ sudo mv composer.phar /usr/local/bin/composer
 composer global require "laravel/installer"
 
 sudo usermod -aG docker $USER
+
+curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o php-cs-fixer
+sudo chmod a+x php-cs-fixer
+sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
+sudo php-cs-fixer self-update
+
