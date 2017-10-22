@@ -23,24 +23,15 @@
         id: '{{ item }}'
       with_items:
         - 0C49F3730359A14518585931BC711F9BA15703C6
-        - BBEBDCB318AD50EC6865090613B00F1FD2C19886
-
-    - name: Add PPA's Deb
-      apt_repository:
-        repo: '{{ item.repo }}'
-        filename: '{{ item.filename }}'
-      with_items:
-        - { repo: 'deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse', filename: 'mongodb-org-3.4'}
-        - { repo: 'deb https://apt.dockerproject.org/repo ubuntu-xenial main', filename: no }
-        - { repo: 'deb http://repository.spotify.com stable non-free', filename: 'spotify' }
+        - 36A1D7869245C8950F966E92D8576A8BA88D21E9
+        - 36A1D7869245C8950F966E92D8576A8BA88D21E9
 
     - name: Update Cache & Upgrade Apt
       apt:
         update_cache: true
-        upgrade: yes
-        autoremove: true
 
     - name: Delete Trash Files
       file:
         path: ./playbook.ppa.retry
         state: absent
+

@@ -33,3 +33,6 @@ echo alias dockerpsa=\'docker ps -a\' >> .bashrc
 
 echo alias unit=\'bin/phpunit\' >> .bashrc
 echo alias unitcover=\'bin/phpunit --coverage-html coverage\' >> .bashrc
+
+echo export DOCKER_HOST=\'tcp://0.0.0.0:2375\' >> .bashrc
+

@@ -1,6 +1,4 @@
 #!/bin/sh
 
-sudo ansible-playbook -i hosts.cfg playbook.languajes.yml
-sudo ansible-playbook -i hosts.cfg playbook.docker.yml
-sudo ansible-playbook -i hosts.cfg playbook.software.yml
+sudo ansible-playbook -i hosts.cfg playbook.$1.yml
 
