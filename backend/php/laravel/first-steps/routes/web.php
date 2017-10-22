@@ -27,3 +27,8 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::get('list', 'ListController');
+
+Route::prefix('pages')->group(function () {
+    Route::get('first', 'PagesController@first');
+    Route::get('second', 'PagesController@second');
+});
