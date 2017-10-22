@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 Route::get('/', 'HomeController');
 
 Route::get('/about', 'AboutController');
@@ -27,3 +25,5 @@ Route::prefix('admin')->group(function () {
         return '/admin/users';
     });
 });
+
+Route::get('list', 'ListController');
