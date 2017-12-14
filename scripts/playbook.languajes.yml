@@ -3,31 +3,28 @@
   connection: local
 
   tasks:
-    - name: Update Cache & Upgrade Apt
+    - name: update cache
       apt:
         update_cache: true
-        upgrade: yes
-        autoremove: true
+        upgrade: no
+        autoremove: no
 
-    - name: Development Dependencies
+    - name: development dependencies
       apt:
         name: "{{ item }}"
       with_items:
-        - build-essential
         - software-properties-common
         - python-pip
         - curl
         - git
         - git-core
-        - vim
-        - guake
         - htop
 
-    - name: Python Dependencies
+    - name: python dependencies
       pip:
         name: docker-py
 
-    - name: Programming Languages
+    - name: programming languages
       apt:
         name: '{{ item }}'
       with_items:
@@ -54,10 +51,10 @@
         - php7.1-zip
         - php-mongodb
         - mongodb-org
-        - ansible
         - docker-engine
 
-    - name: Delete Trash Files
+    - name: delete trash files
       file:
         path: ./playbook.languajes.retry
         state: absent
+

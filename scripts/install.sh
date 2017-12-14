@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo ansible-playbook -i hosts.cfg playbook.$1.yml
+sudo ansible-playbook -i hosts.cfg $1
 

@@ -3,27 +3,23 @@
   connection: local
 
   tasks:
-    - name: Update Cache & Upgrade Apt
+    - name: update cache
       apt:
         update_cache: true
-        upgrade: yes
-        autoremove: true
+        upgrade: no
+        autoremove: no
 
-    - name: Pull Docker Images
+    - name: pull docker images
       command: docker pull {{ item }}
       with_items:
-       - ubuntu
-       - alpine
-       - magiconair/fabio
-       - gliderlabs/registrator
-       - gliderlabs/consul-server
-       - mongo
-       - mariadb
-       - php:alpine
-       - httpd
-       - sebp/lighttpd
+       - ubuntu:16.04
+       - alpine:3.5
+       - mongo:3.4
+       - mariadb:10.2
+       - php:7.1.12-fpm-alpine
+       - golang:1.8.5-alpine
 
-    - name: Delete Trash Files
+    - name: delete trash files
       file:
         path: ./playbook.docker.retry
         state: absent

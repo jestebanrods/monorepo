@@ -3,20 +3,21 @@
   connection: local
 
   tasks:
-    - name: Update Cache & Upgrade Apt
+    - name: update cache
       apt:
         update_cache: true
-        upgrade: yes
-        autoremove: true
+        upgrade: no
+        autoremove: no
 
-    - name: Install Software
+    - name: install software
       apt:
         name: "{{ item }}"
       with_items:
         - spotify-client
         - grub-customizer
 
-    - name: Delete Trash Files
+    - name: delete trash files
       file:
         path: ./playbook.software.retry
         state: absent
+
