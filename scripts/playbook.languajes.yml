@@ -3,12 +3,6 @@
   connection: local
 
   tasks:
-    - name: update cache
-      apt:
-        update_cache: true
-        upgrade: no
-        autoremove: no
-
     - name: development dependencies
       apt:
         name: "{{ item }}"
@@ -51,10 +45,8 @@
         - php7.1-zip
         - php-mongodb
         - mongodb-org
-        - docker-engine
 
     - name: delete trash files
       file:
         path: ./playbook.languajes.retry
         state: absent
-

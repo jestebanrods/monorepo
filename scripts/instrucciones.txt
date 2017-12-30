@@ -1,8 +1,7 @@
-1. update.sh
-2. alias.sh
-3. basic.sh
-4. playbook.languajes.yml
-5. dependencies.sh
-5. playbook.docker.yml
-6. playbook.software.yml
-
+1. alias.sh
+2. update.sh
+3. ppa.sh
+4. basic.sh
+5. playbook.languajes.yml
+6. playbook.docker.yml
+8. dependencies.sh
