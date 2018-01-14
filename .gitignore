@@ -1,0 +1,17 @@
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+*.avi
+*.flv
+*.mp4
+
+*.mp3
+*.wav
+
+vendor
+node_modules
+
+*.idea
+*.vscode
