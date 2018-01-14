@@ -1,0 +1,26 @@
+Ctrl + 1,2: Navegar entre las columnas.
+Ctrl + P: Navegar entre archivos.
+Ctrl + R: Buscar entre funciones o clases.
+Ctrl + G: Ir a alguna linea.
+Ctrl + Shift + P: Comandos.
+Ctrl + K + L: Lo seleccionado a minusculas.
+Ctrl + K + U: Lo seleccionado a mayusculas.
+Ctrl + D: Seleccionar palabra.
+Ctrl + Click: Crear multiples cursores.
+Ctrl + L: Seleccionar linea.
+Ctrl + Shift + K: Borrar linea.
+Ctrl + }: Comentar/Des linea.
+Ctrl  + Shift + Up: Mover linea a arriba.
+Ctrl  + Shift + Down: Mover linea a abajo.
+Ctrl  + Shift + Enter: Agregar espacio de enter.
+Ctrl  + Shift + D: Duplicar linea.
+Ctrl + F: Buscar palabra.
+Ctrl + H: Remplazar palabra.
+Ctrl + F2: Crear/Quitar marcas.
+Ctrl + Shift + F2: Limpiar marcas.
+F2: Navegar entre marcas.
+
+Ctrl + Alt + A: Aligment.
+Ctrl + Shift + H: Maquetar código H, C, JS.
+Ctrl + Alt + N: Crear nuevo archivos y directorios.
+Ctrl + Shift + T: Terminal.

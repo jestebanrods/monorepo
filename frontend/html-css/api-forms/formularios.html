@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <section>
+        <form name="MiFormulario" id="MiFormulario" method="get" autocomplete="off">
+            Email: &nbsp;
+            <input type="email" name="Email" id="Email" required multiple/>
+            <br>
+            <br> Buscar: &nbsp;
+            <input type="search" name="Buscar" id="Buscar" autofocus/>
+            <br>
+            <br> Url: &nbsp;
+            <input type="url" name="URL" id="URL" />
+            <br>
+            <br> Rango &nbsp;
+            <input type="range" name="Rango" min="0" max="5" step="1" />
+            <br>
+            <br> Edad: &nbsp;
+            <input type="number" name="Número" min="0" max="100" placeholder="Múltiplos 5" />
+            <br>
+            <br> C. Postal &nbsp;
+            <input pattern="[0-9]{5}" name="Postal" placeholder="5 Dígitos" />
+            <br>
+            <br> Fecha: &nbsp;
+            <input type="date" name="Fecha" />
+            <input type="submit" value="Enviar" />
+        </form>
+    </section>
+    <img src="../Imagenes/FloresAmarillas.jpg" />
+    <br>
+    <br> Nombre: &nbsp;
+    <input type="text" name="Nombre" form="MiFormulario">
+</body>
+
+</html>

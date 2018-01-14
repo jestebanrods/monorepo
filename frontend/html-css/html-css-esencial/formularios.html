@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="formularios.css">
+</head>
+
+<body>
+    <form action="#" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="consulta">Consulta</label>
+        <textarea name="consulta" name="consulta" rows="10" cols="40"></textarea>
+
+        <label for="radio">Horario</label>
+        <input type="radio" name="radio" id="radio" value="Mañana">Mañana
+        <input type="radio" name="radio" id="radio" value="Tarde">Tarde
+        <input type="radio" name="radio" id="radio" value="Noche">Noche
+
+        <label for="check">Días</label>
+        <input type="checkbox" name="dias" value="Lunes" id="check">Lunes
+        <input type="checkbox" name="dias" value="Martes" id="check">Martes
+        <input type="checkbox" name="dias" value="Miercoles" id="check">Miercoles
+
+        <label for="Pais">País</label>
+        <select name="pais" id="pais">
+        	<option value="Colombia">Colombia</option>
+        	<option value="España">España</option>
+        </select>
+
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+html, body {
+	width: 100%;	
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+h1, li, ul {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-image: url(fondo-cat.jpg);
+	display: flex;
+	background-position: center center; 
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+}
+
+main {
+	display: flex;
+	width: 70%;
+}
+
+.imagenes {
+	background-color: rgba(0, 0, 0, 0.3);
+	flex-basis: 30%;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.imagenes li {
+	list-style: none;
+	margin-top: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+.imagenes img {
+	max-width: 100%;
+}
+
+.contenido {
+	background-color: rgba(255, 255, 255, 0.6);
+	flex-basis: 70%;
+	padding: 20px;
+	text-align: justify;
+}
+
+.contenido ul {
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.contenido ul li {
+    flex-basis: 30%;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.contenido ul li:first-of-type {
+    background-image: url(cat1.jpg);
+}
+
+.contenido ul li:nth-child(2) {
+    background-image: url(cat2.jpg);
+}
+
+.contenido ul li:last-of-type {
+    background-image: url(cat3.jpg);
+}
+
+.dev {
+	border: 1px solid red;
+}

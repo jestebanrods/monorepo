@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+
+main,ul, h1, h3, h2, p {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    width: 65%;
+    margin: 0 auto;
+    font-family: 'Merriweather Sans', sans-serif;
+    background: #CCC;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+h3 {
+	margin-top: 15px;
+	margin-bottom: 3px;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+img {
+	border: 1px solid black;
+	height: 200px;
+	display: inline;
+}
+
+p {
+	text-align: justify;
+}
+
+input:not([type=submit]), textarea {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 1px solid grey;
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+form {
+	width: 45%;
+}
+
+input[type=submit] {
+	font-family: 'Merriweather Sans', sans-serif;
+}

@@ -1,0 +1,28 @@
+#contenedor {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+#zona_formulario {
+    float: left;
+    border: 2px solid #b92c28;
+    width: 250px;
+    padding: 1% 2%;
+}
+
+#zona_datos {
+    float: right;
+    border: 2px solid #2aabd2;
+    width: 300px;
+    padding: 10px;
+}
+
+#area, #clave {
+    width: 230px;
+}
+
+#zona_datos div {
+    padding: 10px;
+    border-bottom: 2px solid #2c3e50;
+}

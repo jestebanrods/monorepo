@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .rojo {
+        color: red;
+    }
+    
+    .azul {
+        color: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Hola Sin JQuery</h1>
+    <button>Cabiar Color</button>
+    <script>
+    var titulo = document.querySelector("h1");
+    var boton = document.querySelector("button");
+    boton.addEventListener("click", function() {
+        if (titulo.classList.contains('rojo')) {
+            titulo.classList.remove('rojo');
+            titulo.classList.add('azul');
+        } else {
+            titulo.classList.add('rojo');
+            titulo.classList.remove('azul');
+        }
+    });
+    </script>
+</body>
+
+</html>

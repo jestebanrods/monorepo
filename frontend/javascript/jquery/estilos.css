@@ -1,0 +1,9 @@
+.parrafos p {
+    display: none;
+}
+
+.prueba {
+    color: red;
+    padding: 20px;
+    border: 1px solid red;
+}

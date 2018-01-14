@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Datos Entre Páginas WEB</title>
+    <link rel="stylesheet" href="estilos_comunicacion.css">
+    <script src="emisor.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <section id="zona_formulario">
+            <form name="formulario">
+                <p>Mensaje</p>
+                <p><textarea name="mensaje" id="mensaje" cols="30" rows="10" required></textarea></p>
+                <p><input type="button" name="boton" id="boton" value="Enviar Mensaje"></p>
+            </form>
+        </section>
+        <section id="zona_recepcion">
+            <h3>Respuesta Envio A Página Amiga: </h3>
+        </section>
+        <section id="zona_datos">
+            <iframe src="receptor.html" id="iframe" width="400px" height="400px"></iframe>
+        </section>
+    </div>
+</body>
+</html>

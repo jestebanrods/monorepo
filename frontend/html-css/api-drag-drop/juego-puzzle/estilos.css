@@ -1,0 +1,18 @@
+#caja_imagen{
+	float:right;
+	border:1px solid #000000;
+	margin: 20px;
+	width: 250px;
+	height: 512px
+}
+#zona_arrastre{
+	float:left;
+	border:1px solid #1200FF;
+	margin: 20px;
+	width: 250px;
+	height: 512px
+}
+
+img{
+    width: 50%;
+}

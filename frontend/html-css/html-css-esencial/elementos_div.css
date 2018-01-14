@@ -1,0 +1,34 @@
+.contenedor {
+    width: 400px;
+    min-height: 200px;
+    background: #CCC;
+    margin: 0 auto;
+}
+
+.cabecera {
+    background: gray;
+    height: 50px;
+}
+
+.cabecera h1 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.slider {
+    margin-top: 25px;
+    height: 100px;
+    background: red;
+}
+
+.footer {
+    margin-top: 25px;
+    height: 25px;
+    background: black;
+}
+
+.footer p {
+    color: white;
+    line-height: 25px;
+}

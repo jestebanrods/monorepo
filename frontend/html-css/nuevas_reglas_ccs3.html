@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			p[name="Elementos"]{
+				color: #EF2525;
+			}
+			#Principal{
+				width: 500px;
+				background-color: #F3F877;
+				text-align: center;
+				margin: 15px auto;
+				padding: 15px;
+				border: 2px solid #827CF3;
+				border-radius: 10px;
+				box-shadow: #E5DDDD 5px 5px 8px;
+				/*background:-webkit-linear-gradient(left, #00F, #3FF);*/
+				/*background:-webkit-radial-gradient(center, circle, #00F, #3FF);*/
+				/*Chrome = webkit, Firefox = mox, Opera o, IE = ms*/
+				outline: 2px dashed #F86E6E;
+				outline-offset: 15px;
+				/*transform: scale(1.2);*/
+				/*transform: rotate(10deg);*/
+				/*transform: scale(0.2) rotate(-90deg);*/
+				/*transition: -webkit-transform 1s ease 0-5s;*/
+			}
+			#Principal:hover{
+				transform: scale(1.1);
+			}
+			@font-face{
+				font-family: 'MiFuente';
+				src:url('FRSCRIPT.TTF');
+			}
+			#Titulo{
+				font:bold 50px MiFuente;
+				text-shadow: #03189A 1px 1px 5px;
+				/*color: rgba(0,0,0,0.2);*/
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			<p name="Elementos">Hola</p>
+			<p>Adios</p>
+			<p name="Elementos">Jossie</p>	
+		</article>
+		<article>
+			<header id="Principal">
+				<span id="Titulo">Estilos CSS3</span>
+			</header>
+		</article>
+	</body>
+</html>

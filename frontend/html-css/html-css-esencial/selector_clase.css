@@ -1,0 +1,10 @@
+/*Clase que combina cualquier elemento que la use*/
+.tipo {
+	color: red;
+}
+
+/*Clase que solo funciona para elementos de parrafo*/
+/*A su vez dentro de este parrafo, solo afecta a los enlaces*/
+p.internas a {
+	color: green;
+}

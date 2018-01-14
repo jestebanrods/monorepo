@@ -1,0 +1,25 @@
+body {
+	width: 60%;
+	height: auto;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+p:first-line {
+	color: red;
+}
+
+p:first-letter {
+	color: green;
+	font-size: 30px;
+}
+
+h1:before {
+	content: 'Hola';
+	color: red;
+}
+
+h1:after {
+	content: 'Mundo';
+	color: green;
+}

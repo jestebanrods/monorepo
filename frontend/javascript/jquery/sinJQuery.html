@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+
+<body>
+    <h1>Uso JS Sin JQuery</h1>
+    <a href="#">Enlace</a>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Carga JavaScript");
+    });
+
+    var enlace = document.querySelector('a');
+    enlace.addEventListener('click', function() {
+        event.preventDefault();
+        console.log("Enlace Oprimido")
+    });
+    </script>
+</body>
+
+</html>

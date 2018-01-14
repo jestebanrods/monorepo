@@ -1,0 +1,37 @@
+#contenedor1 {
+    width: 60%;
+    margin: auto;
+}
+
+#formulario {
+    width: auto;
+    border: 2px solid #1FF542;
+    padding: 2%;
+    float: left;
+
+}
+
+#zona_datos_servidor {
+    width: 200px;
+    height: 100px;
+    border: 2px solid #ff0f00;
+    padding: 1%;
+    float: right;
+}
+
+#zona_progreso {
+    color: #FF0303;
+    font-size: 40px;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    border: 2px solid #ff0f00;
+    padding: 1%;
+    float: right
+}
+
+#boton {
+    width: 100%;
+    margin: auto;
+}
+

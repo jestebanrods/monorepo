@@ -1,0 +1,25 @@
+p, h1 {
+  color:red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+ul li {
+  color: blue;
+}
+
+ul li a {
+  color: green;
+}
+
+/*Pseudo clase*/
+/*Pasar en mouse por encima*/
+a:hover {
+	color: pink;
+	font-size: 50px;
+}
+
+/*El primer elemento li de todo el documento*/
+li:first-of-type {
+  color:green;
+}

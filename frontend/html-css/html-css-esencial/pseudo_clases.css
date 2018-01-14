@@ -1,0 +1,35 @@
+/*Estado*/
+h1:hover {
+    color: red;
+}
+
+input:focus {
+    background-color: red;
+}
+
+a:active {
+    color: yellow;
+}
+
+a:visited {
+    color: green;
+}
+
+
+/*Posición*/
+div span:first-of-type {
+    color: yellow;
+    background-color: #CCC;
+}
+
+div :first-child {
+    color: green;
+}
+
+div :only-child {
+    color: yellow;
+}
+/*odd, even, 3*/
+div p:nth-child(odd) {
+    color: red;
+}

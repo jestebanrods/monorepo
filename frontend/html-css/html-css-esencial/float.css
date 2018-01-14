@@ -1,0 +1,25 @@
+main {
+	width: 60%;
+	margin: 0 auto;
+	background: #CCC;
+	overflow: auto;
+}
+
+img {
+	float: left;
+	width: 100%;
+	height: auto;
+}
+
+.avatar {
+	width: 30%;
+	float: left;
+	border: 1px solid red;
+}
+
+.contenido {
+	width: 60%;
+	float: right;
+	text-align: justify;
+	border: 1px solid blue;
+}

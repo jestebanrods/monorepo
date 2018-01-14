@@ -1,0 +1,13 @@
+body {
+    font-family: Helvetica, Arial, Times, sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 15px;
+}

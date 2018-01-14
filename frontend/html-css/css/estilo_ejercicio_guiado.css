@@ -1,0 +1,73 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+
+#TituloPrincipal{
+	width: 500px;
+	margin: 10px auto;
+	background:-webkit-linear-gradient(left, #E5FE5A, #4EF86A);
+	background-color: #D9F234;
+	text-align: center;
+	padding: 10px;
+	border-radius: 20px;
+	border: 2px solid #FF0303;
+	font-family: Arial;
+	font-size: 20px;
+	box-shadow: #E5DDDD 5px 5px 8px;
+}
+
+h2{
+	margin: 10px auto;
+	text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+section{
+	width: 90%;
+	border-top: 1px dashed #6A6969;
+	margin: 15px auto;
+}
+
+body{
+	background-color: #FFFECA;
+}
+
+figure{
+	float: left;
+	margin: 5px;
+}
+
+figure img{
+	padding: 2px;
+	border-radius: 20px;
+	border: 2px solid #000000;
+	box-shadow: 2px 2px 8px;
+	transition: transform 0.2s;
+}
+
+figure img:hover{
+	transform: scale(1.08);
+}
+
+figcaption{
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 20px;
+	text-align: center;
+	margin: 10px auto;
+}
+
+footer{
+	clear: both;
+	font-family: Arial;
+}

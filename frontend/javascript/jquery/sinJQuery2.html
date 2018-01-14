@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+
+<body>
+    <h1 id="principal">Título 1</h1>
+    <h2 class="titulo">Título 2</h2>
+    <ul>
+        <li>Enlace 1</li>
+        <li>Enlace 2</li>
+        <li>Enlace 3</li>
+    </ul>
+    <script>
+        var elementos = document.querySelectorAll('li');
+        console.log(elementos);
+        elementos[1].addEventListener('click', function () {
+            console.log("Click Elemento 2");
+        });
+
+        var titulo = document.getElementsByClassName("titulo");
+        console.log(titulo);
+
+        var principal = document.getElementById("principal");
+        console.log(principal);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+/*Se mueve en función de su posición*/
+.uno {
+	width: 250px;
+	height: 150px;
+	background: blue;
+	position: relative;
+	top: 10px;
+}
+
+/*Se mueve en función de la posición de su contenedor padre*/
+.dos {
+	width: 250px;
+	height: 100px;
+	background: green;
+	position: absolute;
+    top:20px;
+}
+
+/*Se queda posicionado fijo*/
+.uno {
+	width: 100%;
+	height: 50px;
+	background: blue;
+	position: fixed;
+    top: 0;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Eventos Anidados</title>
+		<script>
+			function LosEventos() {
+				var Elemento1 = document.getElementsByTagName('p')[0];
+				var Elemento2 = document.getElementsByTagName('img')[0];
+				Elemento1.addEventListener('click', Aviso2, true);
+				Elemento2.addEventListener('click', Aviso1, false);
+			}
+
+			function Aviso1() {
+				alert('Hola Soy La Imágen');
+			}
+
+			function Aviso2() {
+				alert('Hola Soy Él Parrafo');	
+			}
+
+			window.addEventListener('load', LosEventos, false);
+		</script>
+	</head>
+	<body>
+		<p> <img src="Imagenes/FloresRojas.jpg"/> </p>
+	</body>
+</html>

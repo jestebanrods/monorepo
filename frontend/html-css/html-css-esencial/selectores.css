@@ -1,0 +1,19 @@
+/*Selectores de tipo*/
+h3 {
+	font-size: 20px;
+}
+
+/*Selectores de clase*/
+.rojo {
+	color: red;
+}
+
+/*Selectores de id*/
+#cabecera {
+	position: fixed;
+	background-color: gray;
+}
+
+/*Selectores compueto*/
+h5#indice {  }
+p.parrafo {  }

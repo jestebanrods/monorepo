@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Formulario Email</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="AspectoFormulario.css">
+    <script src="FuncionFormularioEmail.js"></script>
+</head>
+
+<body>
+    <form name="DatosUsuario" method="get">
+        <table>
+            <tr>
+                <td>Usuario:</td>
+                <td>
+                    <input pattern="[A-Za-z]{3}" name="Usuario" id="Usuario" maxlength="20" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="email" name="Email" id="Email" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>Edad:</td>
+                <td>
+                    <input type="range" name="Edad" id="Edad" min="0" max="150" value="30" step="30" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <output id="Rango">0 A 30</output>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="Enviar" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

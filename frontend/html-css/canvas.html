@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			#Lienzo {
+				background-color: #ADCFFE;
+			}
+			section {
+				width: 500px;
+				position: relative;
+				margin: auto;
+			}
+		</style>
+		<script>
+			function Comenzar() {
+				var Elemento = document.getElementById('Lienzo');
+				Lienzo = Elemento.getContext('2d');
+				Lienzo.fillStyle = '#FA2E4B';
+				Lienzo.globalAlpha = 0.2;
+				Lienzo.fillRect(110,110,100,100);
+				Lienzo.strokeRect(220, 110, 50,50);
+				Lienzo.clearRect(130,130,20,20);
+			}
+			window.addEventListener('load', Comenzar, false);
+		</script>
+	</head>
+	<body>
+		<section>
+			<canvas id ="Lienzo" width="500px" height="300px">
+				
+			</canvas>
+		</section>
+	</body>
+</html>

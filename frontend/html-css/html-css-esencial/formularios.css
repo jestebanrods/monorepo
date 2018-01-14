@@ -1,0 +1,11 @@
+label, input:not([type=radio]):not([type=checkbox]) {
+    display: block;
+}
+
+label, input[type=submit] {
+	margin-top: 20px;
+}
+
+label:first-of-type {
+	margin-top: 0px;
+}
