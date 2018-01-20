@@ -1,15 +1,14 @@
-//Establecer conección con el websocket del puerto 7000
-var socket = io.connect('http://localhost:7000', { 'forceNew': true });
+//Establecer conección con el websocket
+const socket = io.connect(`https://jossiechat.herokuapp.com`, { 'forceNew': true });
 
 //Estar a la escucha de un mensaje
-socket.on('messages', function(data) {  
-  console.log(data);
+socket.on('messages', (data) => {
   render(data);
 })
 
 //Renderizar la nueva información
-function render (data) {  
-  var html = data.map(function(elem, index) {
+const render = (data) => {
+  let html = data.map((elem, index) => {
     return(`<div>
               <strong>${elem.author}</strong>:
               <em>${elem.text}</em>
@@ -18,10 +17,10 @@ function render (data) {
   document.getElementById('messages').innerHTML = html;
 }
 
-//Si se da click en l botón enviar
+//Si se da click en el botón enviar
 //Se recupera los datos a enviar y se envian por el websocket
-function addMessage(e) {  
-  var message = {
+const addMessage = (event) => {
+  let message = {
     author: document.getElementById('username').value,
     text: document.getElementById('texto').value
   };

@@ -1,35 +1,36 @@
 //Importación de librerías
-var express = require('express');
-var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+const express = require('express');
+const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+const port = process.env.PORT || 5000;
 
 //Prototipo de mensaje a enviar
-var messages = [{
+let messages = [{
   id: 1,
-  text: "Hola soy un mensaje",
-  author: "Jossie"
+  text: "Bienvenidos",
+  author: "Administrador"
 }];
 
 //Definición de la carpeta del frontend
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 //Definición de la ruta hello
-app.get('/hello', function (req, res) {
-  res.status(200).send("Hello World!");
+app.get('/hello', (request, response) => {
+  response.status(200).send("Hello World!");
+});
+
+//Abrir el servidor de websockets
+server.listen(port, () => {
+  console.log(`Server started in https://localhost:${port}`);
 });
 
 //Configuración del websocket
-io.on('connection', function (socket) {
-  console.log('Usuario nuevo conectado');
+io.on('connection', (socket) => {
+  console.log('New user connect');
   socket.emit('messages', messages);
-  socket.on('new-message', function (data) {
+  socket.on('new-message', (data) => {
     messages.push(data);
     io.sockets.emit('messages', messages);
   });
-});
-
-//Abrir el servidor de websockets en el puerto 7000
-server.listen(7000, function () {
-  console.log("Servidor corriendo en http://localhost:7000");
 });

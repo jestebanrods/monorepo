@@ -1,0 +1,7 @@
+{
+  "name": "Chat con websockets",
+  "description": "Chat usando websockets.io",
+  "repository": "https://git.heroku.com/jossiechat.git",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
