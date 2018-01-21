@@ -1,9 +1,19 @@
+//Modo estricto
+'use strict'
+
 //Importación de librerías
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const pg = require('pg');
+
+//Definición de constantes
 const port = process.env.PORT;
+const connectionString = process.env.DATABASE_URL;
+
+//Definición de objetos
+const client = new pg.Client(connectionString);
 
 //Prototipo de mensaje a enviar
 let messages = [{
@@ -22,12 +32,12 @@ app.get('/hello', (request, response) => {
   `);
 });
 
-//Abrir el servidor de websockets
+//Correr el servidor
 server.listen(port, () => {
   console.log(`Server started in https://localhost:${port}`);
 });
 
-//Configuración del websocket
+//Configuración del servidor de websocket
 io.on('connection', (socket) => {
   console.log('New user connect');
   socket.emit('messages', messages);
@@ -36,11 +46,6 @@ io.on('connection', (socket) => {
     io.sockets.emit('messages', messages);
   });
 });
-
-//Conexión a bbdd postgresql
-const pg = require('pg');
-const connectionString = process.env.DATABASE_URL;
-const client = new pg.Client(connectionString);
 
 /**
 const client = new pg.Client({
@@ -52,6 +57,7 @@ const client = new pg.Client({
 })
 */
 
+//Conexión a bbdd postgresql
 client.connect()
 
 client.query("CREATE TABLE IF NOT EXISTS personas(nombre varchar(64), apellido varchar(64), matriculado boolean)")
