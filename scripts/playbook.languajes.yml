@@ -45,6 +45,8 @@
         - php7.1-zip
         - php-mongodb
         - mongodb-org
+        - nodejs
+        - npm
 
     - name: delete trash files
       file:

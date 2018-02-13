@@ -10,3 +10,5 @@ sudo mv composer.phar /usr/local/bin/composer
 composer global require "laravel/installer"
 
 sudo usermod -aG docker $USER
+
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
