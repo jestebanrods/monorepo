@@ -3,12 +3,14 @@ FROM golang:1.9.2-alpine
 LABEL manteiner "Jossie Esteban Rodríguez Salazar"
 LABEL email "jestebanrods@gmail.com"
 
-RUN mkdir -p /go/src/
-WORKDIR /go/src/
+RUN mkdir -p /go/src
 
-COPY ./src/main.go ./
+WORKDIR /go/src
+
+COPY src .
 
 ENV CGO_ENABLED=0
 ENV GOOS=linux
+ENV GOARCH=amd64
 
-RUN go build main.go
+CMD ["go", "build", "main.go"]

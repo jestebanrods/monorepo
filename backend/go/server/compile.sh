@@ -7,9 +7,9 @@ docker rm -f $(docker ps -a -q)
 docker build -f Dockerfile.builder -t jestebanrods/go-builder .
 
 #Crear el contenedor que compilara
-docker run -di --name compilador jestebanrods/go-builder sh
+docker run --name compilador jestebanrods/go-builder
 
-#Copiar el archivo compilado
+#Extraer el archivo compilado
 docker container cp compilador:/go/src/main ./bin/main
 
 #Crear la imagen del proyecto
@@ -17,6 +17,3 @@ docker build -f Dockerfile -t jestebanrods/go-server .
 
 #Ejecutar la aplicación
 docker run -d -p 80:8000 --name app jestebanrods/go-server
-
-#Detener el contenedor que compila
-docker stop compilador

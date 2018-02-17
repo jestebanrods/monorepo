@@ -3,9 +3,9 @@ FROM scratch
 LABEL manteiner "Jossie Esteban Rodríguez Salazar"
 LABEL email "jestebanrods@gmail.com"
 
-WORKDIR bin/
+WORKDIR /bin
 
-COPY ./bin/main ./main
+COPY bin .
 
 EXPOSE 8000
 
