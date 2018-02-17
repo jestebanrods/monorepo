@@ -6,7 +6,7 @@ LABEL email "jestebanrods@gmail.com"
 RUN mkdir -p /go/src/
 WORKDIR /go/src/
 
-COPY main.go ./
+COPY ./src/main.go ./
 
 ENV CGO_ENABLED=0
 ENV GOOS=linux

@@ -17,3 +17,6 @@ docker build -f Dockerfile -t jestebanrods/go-server .
 
 #Ejecutar la aplicación
 docker run -d -p 80:8000 --name go-server jestebanrods/go-server
+
+#Detener el contenedor que compila
+docker stop go-builder
