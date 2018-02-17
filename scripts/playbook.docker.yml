@@ -7,8 +7,8 @@
       command: docker pull {{ item }}
       with_items:
        - ubuntu:16.04
-       - alpine:3.5
-       - mongo:3.4
+       - alpine:3.7
+       - mongo:3.6
        - mariadb:10.2
        - php:7.1.12-fpm-alpine
        - golang:1.9.2-alpine

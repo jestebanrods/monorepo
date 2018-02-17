@@ -1,8 +1,0 @@
-Exponer puerto en la configuración del docker de windows
-
-sudo curl -sSL https://get.docker.com/ | sh
-sudo apt-get update
-sudo apt-get upgrade
-sudo vim ~/.profile
-export DOCKER_HOST=tcp://0.0.0.0:2375
-

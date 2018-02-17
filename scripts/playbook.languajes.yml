@@ -44,7 +44,6 @@
         - php7.1-mysql
         - php7.1-zip
         - php-mongodb
-        - mongodb-org
         - nodejs
         - npm
 

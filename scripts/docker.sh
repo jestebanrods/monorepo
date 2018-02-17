@@ -2,13 +2,12 @@
 
 declare -a array=(
     'ubuntu:16.04'
-    'alpine:3.5'
-    'mongo:3.4'
+    'alpine:3.7'
+    'mongo:3.6'
     'mariadb:10.2'
     'php:7.1.12-alpine'
     'golang:1.9.2-alpine'
-    'dpage/pgadmin4'
-    'postgres:10.1-alpine')
+    'postgres:9.6-alpine')
 
 for item in ${array[@]}
 do 
