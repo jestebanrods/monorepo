@@ -1,0 +1,71 @@
+- hosts: localhost  
+  become: false
+  connection: local
+  
+  vars_files:
+    - variables.dev.yml
+
+  tasks:
+    - name: Compile Go File
+      command: go build main.go
+      environment:
+        GOOS: linux
+        GOARCH: amd64
+        CGO_ENABLED: 0
+    
+    - name: Build Go Server Image
+      command: docker build -t jestebanrods/goserver .
+
+    - name: Docker Remove Old Container
+      docker_container:
+        name: "{{item}}"
+        state: absent
+      with_items:
+        - registrator
+        - consul
+        - goserver
+
+    - name: Docker Consul Server
+      docker_container:
+        network_mode: bridge
+        name: consul
+        image: gliderlabs/consul-server
+        ports: 
+          - 8500:8500
+          - "{{consul}}:53:8600/udp"
+          - 8400:8400
+        command: "-node services -bootstrap"
+
+    - name: Docker Consul Registrator
+      docker_container:
+        network_mode: host
+        name: registrator
+        image: gliderlabs/registrator
+        state: started
+        command: "-ip {{ip}} consul://{{ip}}:8500"
+        volumes: 
+          -  "/var/run/docker.sock:/tmp/docker.sock"
+        restart_policy: always
+
+    - name: Docker Go Server
+      docker_container:
+        name:  goserver
+        image: jestebanrods/goserver
+        network_mode: bridge
+        ports: 80:8000
+        memory: 20M
+        memory_swap: 50M
+        state: started
+        env:
+          SERVICE_8000_NAME: goserver
+          SERVICE_8000_ID: j1o28o49dxw2
+          SERVICE_8000_CHECK_HTTP: true
+        restart_policy: always
+    
+    - name: Delete Trash Files
+      file:
+        path: "{{item}}"
+        state: absent
+      with_items:
+        - ./main
+        - playbook.dev.retry
