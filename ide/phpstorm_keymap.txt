@@ -17,4 +17,3 @@ Alt+V: Split vertical
 Alt+H: Split horizontal
 Alt+AvPag/RePag: Cambiar entre splits
 Ctrl+Shift+F10: Ejecutar test
-

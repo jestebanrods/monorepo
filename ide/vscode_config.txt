@@ -1,16 +1,10 @@
-PHP
-
-Extensiones
-PHP DocBlocker
-PHP Intellisense - Crane
-PHP Namespace Resolver
-php cs fixer
-TODO Highlight
-TWIG pack
-
-Configuraciones
-Copiar los settings
-Copiar los keybinding
-Instalar los stubs de Crane
-Rebuild la cache de Crane
-
+bmewburn.vscode-intelephense-client
+file-icons.file-icons
+mblode.twig-language
+MehediDracula.php-constructor
+neilbrayfield.php-docblocker
+nikitaKunevich.snippet-creator
+phproberto.vscode-php-getters-setters
+predrag-nikolic.php-class-helper
+sleistner.vscode-fileutils
+smlombardi.slime

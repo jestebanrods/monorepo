@@ -1,14 +1,17 @@
 {
-    "editor.fontSize": 12,
     "workbench.startupEditor": "newUntitledFile",
-    "php.validate.enable": true,
-    "php.validate.executablePath": "/usr/bin/php",
-    "php.validate.run": "onType",
     "workbench.iconTheme": "file-icons",
-    "namespaceResolver.showMessageOnStatusBar": true,
-    "namespaceResolver.autoSort": true,
-    "namespaceResolver.sortAlphabetically": false,
-    "namespaceResolver.leadingSeparator": true,
-    "php-cs-fixer.rules": "@Symfony"
+    "workbench.colorTheme": "Slime",
+    "workbench.statusBar.feedback.visible": false,
+    "explorer.openEditors.visible": 0,
+    "workbench.activityBar.visible": true,
+    "editor.minimap.enabled": false,
+    "window.openFilesInNewWindow": "on",
+    "phpGettersSetters.spacesAfterParam": 1,
+    "phpGettersSetters.spacesAfterParamVar": 1,
+    "phpGettersSetters.spacesAfterReturn": 1,
+    "class-helper.php.property.visibility": "public",
+    "php.suggest.basic": false,
+    "php-docblocker.gap": false,
+    "explorer.sortOrder": "type",
 }
-
