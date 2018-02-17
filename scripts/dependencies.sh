@@ -13,4 +13,6 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo curl -sSL https://get.docker.com/ | sh
 sudo apt-get -y update
 sudo apt-get -y upgrade
+
 echo export DOCKER_HOST=\'tcp://0.0.0.0:2375\' >> ~/.profile
+

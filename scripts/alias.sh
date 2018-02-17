@@ -28,6 +28,3 @@ echo alias gitco=\'git checkout\' >> .bashrc
 echo alias unit=\'bin/phpunit\' >> .bashrc
 echo alias unitcover=\'bin/phpunit --coverage-html coverage\' >> .bashrc
 
-echo alias docker=\'docker.exe\' >> .bashrc
-
-
