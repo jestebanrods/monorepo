@@ -7,7 +7,9 @@ declare -a array=(
     'mariadb:10.2'
     'php:7.1.12-alpine'
     'golang:1.9.2-alpine'
-    'postgres:9.6-alpine')
+    'postgres:9.6-alpine',
+    'consul:1.0.6'
+    'gliderlabs/registrator')
 
 for item in ${array[@]}
 do 
