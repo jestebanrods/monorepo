@@ -1,17 +1,22 @@
-'use strict'
-const http = require('http');
+const server = require('http').createServer(),
+    fs = require('fs')
 
-const hostname = 'localhost';
-const port = 3000;
+const hostname = 'localhost',
+    port = 8000
 
 const webServer = (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end('<h1>Hola Mundo</h1>');
+    const readFile = (error, data) => {
+        if (error) throw error
+        res.end(data)
+    }
+
+    res.writeHeader(200, { 'Content-Type': 'text/html' })
+    fs.readFile('assets/index.html', readFile)
 }
 
-const server = http.createServer(webServer);
+const readyServer = () => {
+    console.log(`Server: http://${hostname}:${port}/`)
+}
 
-server.listen(port, hostname, () => {
-    console.log(`El servidor se está ejecutando en http://${hostname}:${port}/`);
-});
+server.on('request', webServer)
+    .listen(port, hostname, readyServer);
