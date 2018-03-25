@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue - 00Intro</title>
+    </head>
+
+    <body>
+        <main id="app">
+            <h2>{{ message }}</h2>
+            <input type="text" v-model="message">
+            <pre>
+                <code>{{ $data }}</code>
+            </pre>
+        </main>
+        <script src="../vue.min.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Introducción A VueJS'
+                }
+            })
+        </script>
+    </body>
+
+</html>
