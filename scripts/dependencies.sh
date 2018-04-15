@@ -6,13 +6,8 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
 sudo mv composer.phar /usr/local/bin/composer
+
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt install nodejs
+
 sudo usermod -aG docker $USER
-
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-
-sudo curl -sSL https://get.docker.com/ | sh
-sudo apt-get -y update
-sudo apt-get -y upgrade
-
-echo export DOCKER_HOST=\'tcp://0.0.0.0:2375\' >> ~/.profile
-

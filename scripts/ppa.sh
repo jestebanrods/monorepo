@@ -1,10 +1,13 @@
 #!/bin/bash
 
-sudo apt-add-repository ppa:git-core/ppa -y
-sudo apt-add-repository ppa:webupd8team/java -y
-sudo apt-add-repository ppa:longsleep/golang-backports -y
-sudo apt-add-repository ppa:ondrej/php -y
-sudo apt-add-repository ppa:ansible/ansible -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
 
-#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-#echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+sudo apt-add-repository -y \
+    ppa:git-core/ppa \
+    ppa:webupd8team/java \
+    ppa:longsleep/golang-backports \
+    ppa:ondrej/php \
+    ppa:ansible/ansible \
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"

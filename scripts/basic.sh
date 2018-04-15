@@ -1,4 +1,9 @@
-sudo apt install -y vim
-sudo apt install -y git
-sudo apt install -y ansible
-sudo apt install -y cowsay
+#!/bin/bash
+
+sudo apt-get install -y \
+    vim \
+    git \
+    ansible \
+    cowsay \
+    apt-transport-https \
+    ca-certificates

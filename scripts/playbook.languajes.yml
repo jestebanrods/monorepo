@@ -5,21 +5,29 @@
   tasks:
     - name: development dependencies
       apt:
-        name: "{{ item }}"
+        state: present
+        name: '{{ item }}'
       with_items:
+        - build-essential
         - software-properties-common
         - python-pip
         - curl
-        - git
         - git-core
         - htop
+        - docker-ce
+        - ansible
+        - gitg
 
     - name: python dependencies
       pip:
-        name: docker-py
+        state: latest
+        name: '{{ item }}'
+      with_items:
+        - pip
 
     - name: programming languages
       apt:
+        state: present
         name: '{{ item }}'
       with_items:
         - default-jre
@@ -44,8 +52,6 @@
         - php7.1-mysql
         - php7.1-zip
         - php-mongodb
-        - nodejs
-        - npm
 
     - name: delete trash files
       file:
