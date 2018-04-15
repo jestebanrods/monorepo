@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #Reset Bash Config
 rm ~/.bashrc
@@ -27,4 +27,3 @@ echo alias gitco=\'git checkout\' >> .bashrc
 
 echo alias unit=\'bin/phpunit\' >> .bashrc
 echo alias unitcover=\'bin/phpunit --coverage-html coverage\' >> .bashrc
-
