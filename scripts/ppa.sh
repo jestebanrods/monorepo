@@ -9,5 +9,6 @@ sudo apt-add-repository -y \
     ppa:longsleep/golang-backports \
     ppa:ondrej/php \
     ppa:ansible/ansible \
+    ppa:plushuang-tw/uget-stable
 
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"

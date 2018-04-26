@@ -6,14 +6,15 @@
     - name: pull docker images
       command: docker pull {{ item }}
       with_items:
-       - ubuntu:16.04
-       - mongo:3.6
-       - mariadb:10.2
-       - php:7.1.16-fpm-jessie
-       - golang:1.10.1-stretch
-       - consul:1.0.6
-       - gliderlabs/registrator
-       - rtlsabuc/php71:7.1.15-0
+       - alpine
+      #  - mongo:3.6
+      #  - mariadb:10.2
+       - php:7-fpm-alpine
+      #  - golang:1.10.1
+      #  - consul:1.0.6
+      #  - gliderlabs/registrator
+      #  - rtlsabuc/php71:7.1.15-0
+       - nginx:1.12-alpine
 
     - name: delete trash files
       file:
