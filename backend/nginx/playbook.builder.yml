@@ -1,0 +1,45 @@
+- hosts: localhost
+  become: false
+  connection: local
+
+  tasks:
+    - name: build images jestebanrods/server
+      docker_image:
+        name: jestebanrods/server
+        path: ./
+        force: yes
+        pull: no
+        dockerfile: server.Dockerfile
+
+    - name: builde images jestebanrods/code
+      docker_image:
+        name: jestebanrods/code
+        path: ./
+        force: yes
+        pull: no
+        dockerfile: code.Dockerfile
+    
+    - name: php
+      docker_container:
+        name:  php
+        image: jestebanrods/code
+        network_mode: bridge
+        state: started
+        restart_policy: always
+
+    - name: nginx
+      docker_container:
+        name:  nginx
+        image: jestebanrods/server
+        ports: '8080:80'
+        network_mode: bridge
+        state: started
+        links: php
+        restart_policy: always
+            
+    - name: delete trash files
+      file:
+        path: '{{item}}'
+        state: absent
+      with_items:
+        - playbook.builder.retry
