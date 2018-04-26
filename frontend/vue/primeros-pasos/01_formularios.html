@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <main id="app">
+        <h3>Formulario
+            <span>{{ formTitle }}</span>
+        </h3>
+        <form class="formulario">
+            <div class="input">
+                <input v-model="formType" :value="true" type="radio">A
+                <input v-model="formType" :value="false" type="radio">B
+            </div>
+            <input class="input" type="text" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombre" required>
+            <input class="input" type="number" pattern="^[0-9]+$" placeholder="Teléfono" required>
+            <template v-if="!formType">
+                <input class="input" type="email" placeholder="Correo Electrónico" required>
+                <select class="input">
+                    <option v-for="option in options" :value="option.id">{{ option.name }}</option>
+                </select>
+            </template>
+            <template v-else>
+                <textarea class="input" cols="30" rows="10" placeholder="Comentario" required></textarea>
+            </template>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <script src="../vue.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
