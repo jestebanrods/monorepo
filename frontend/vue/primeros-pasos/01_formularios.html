@@ -14,21 +14,25 @@
         <h3>Formulario
             <span>{{ formTitle }}</span>
         </h3>
+        <span v-show="msg" v-text="existsErrorMsg"></span>
         <form class="formulario">
             <div class="input">
                 <input v-model="formType" :value="true" type="radio">A
                 <input v-model="formType" :value="false" type="radio">B
             </div>
-            <input class="input" type="text" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombre" required>
-            <input class="input" type="number" pattern="^[0-9]+$" placeholder="Teléfono" required>
+            <input @keyup="validateData" title="nombre" class="input" type="text" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombre"
+                required>
+            <input @keyup="validateData" title="teléfono" class="input" type="number" name="phone" pattern="^[0-9]+$" placeholder="Teléfono"
+                required>
             <template v-if="!formType">
-                <input class="input" type="email" placeholder="Correo Electrónico" required>
+                <input @keyup="validateData" title="email" class="input" type="email" name="email" placeholder="Correo Electrónico" required>
                 <select class="input">
-                    <option v-for="option in options" :value="option.id">{{ option.name }}</option>
+                    <option v-for="option in options" :value="option.id" v-text="option.name"></option>
                 </select>
             </template>
             <template v-else>
-                <textarea class="input" cols="30" rows="10" placeholder="Comentario" required></textarea>
+                <textarea @keyup="validateData" title="comentario" class="input" name="comment" cols="30" rows="10" placeholder="Comentario"
+                    required></textarea>
             </template>
             <input type="submit" value="Enviar">
         </form>
