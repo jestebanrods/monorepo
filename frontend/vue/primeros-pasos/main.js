@@ -40,6 +40,9 @@ const mv = new Vue({
                 return this.msg.comment
             }
             return ''
+        },
+        setClass() {
+            return [this.response ? 'message-success' : 'message-error']
         }
     },
     methods: {
@@ -57,7 +60,18 @@ const mv = new Vue({
             this.msg[input.name] = expression ? `Dato incorrecto, ${input.title}` : ``
         },
         sendForm(evt) {
+            let form = document.getElementById('formulario'),
+                formData = new FormData(form)
 
+            axios.post('http://127.0.0.1:8000', formData)
+                .then(res => {
+                    this.response = true
+                    this.msg.response = res.data
+                })
+                .catch(error => {
+                    this.response = false
+                    this.msg.response = 'Error Conexión'
+                })
         }
     }
 })

@@ -15,10 +15,11 @@
             <span>{{ formTitle }}</span>
         </h3>
         <span v-show="msg" v-text="existsErrorMsg"></span>
-        <form class="formulario">
+        <span v-show="msg.response" v-html="msg.response" :class="setClass"></span>
+        <form @submit.prevent="sendForm" class="formulario" id="formulario">
             <div class="input">
-                <input v-model="formType" :value="true" type="radio">A
-                <input v-model="formType" :value="false" type="radio">B
+                <input v-model="formType" :value="true" type="radio" name="formType">A
+                <input v-model="formType" :value="false" type="radio" name="formType">B
             </div>
             <input @keyup="validateData" title="nombre" class="input" type="text" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombre"
                 required>
@@ -26,7 +27,7 @@
                 required>
             <template v-if="!formType">
                 <input @keyup="validateData" title="email" class="input" type="email" name="email" placeholder="Correo Electrónico" required>
-                <select class="input">
+                <select class="input" name="languages">
                     <option v-for="option in options" :value="option.id" v-text="option.name"></option>
                 </select>
             </template>
@@ -38,6 +39,7 @@
         </form>
     </main>
     <script src="../vue.min.js"></script>
+    <script src="../axios.min.js"></script>
     <script src="main.js"></script>
 </body>
 

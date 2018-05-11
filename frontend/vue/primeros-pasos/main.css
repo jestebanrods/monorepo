@@ -20,3 +20,13 @@ body {
     border: thin solid red;
     outline: thin solid red;
 }
+
+.message-success{
+    color: green;
+    font-weight: bold;
+}
+
+.message-error{
+    color: red;
+    font-weight: bold;
+}
