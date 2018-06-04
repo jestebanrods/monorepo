@@ -18,7 +18,7 @@ echo >> .bashrc
 echo alias lss=\'ls -1X\' >> .bashrc
 echo alias lsa=\'ls -1SXa\' >> .bashrc
 echo alias lh=\'ls -lhX\' >> .bashrc
-echo alias hc=\'history -c\' >> .bashrc
+echo alias hc=\'history -c \&\& clear\' >> .bashrc
 
 echo alias gits=\'git status\' >> .bashrc
 echo alias gitb=\'git branch\' >> .bashrc
