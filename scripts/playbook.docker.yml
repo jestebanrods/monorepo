@@ -7,16 +7,14 @@
       command: docker pull {{ item }}
       with_items:
        - alpine
-      #  - mongo:3.6
-      #  - mariadb:10.2
        - php:7-fpm-alpine
-      #  - golang:1.10.1
-      #  - consul:1.0.6
-      #  - gliderlabs/registrator
-      #  - rtlsabuc/php71:7.1.15-0
-       - nginx:1.12-alpine
+       - golang:1.10.3
+       - consul:1.0.6
+       - gliderlabs/registrator
+       - rtlsabuc/php71:7.1.15-0
 
     - name: delete trash files
       file:
         path: ./playbook.docker.retry
         state: absent
+

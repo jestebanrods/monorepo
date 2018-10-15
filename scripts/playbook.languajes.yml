@@ -17,8 +17,8 @@
         - docker-ce
         - ansible
         - gitg
-        - uget
-
+        - nload
+  
     - name: python dependencies
       pip:
         state: latest
@@ -56,14 +56,8 @@
         - php-mongodb
         - php-pear
 
-    - name: pecl install php extensions
-      pear:
-        name: '{{item}}'
-        state: present
-      with_items:
-        - pecl/swoole
-
     - name: delete trash files
       file:
         path: ./playbook.languajes.retry
         state: absent
+

@@ -1,0 +1,12 @@
+alias lss='ls -1X'
+alias lsa='ls -1SXa'
+alias lh='ls -lhX'
+alias hc='history -c && clear'
+
+alias gits='git status'
+alias gitb='git branch'
+alias gitl='git log --oneline'
+alias gitco='git checkout'
+
+alias unit='bin/phpunit'
+alias unitcover='bin/phpunit --coverage-html coverage'
