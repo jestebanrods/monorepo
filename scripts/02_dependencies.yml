@@ -1,0 +1,20 @@
+# Bash Aliases
+# ansible-playbook -u root -i inventory.cfg 02_dependencies.yml
+
+- hosts: localhost  
+  become: false  
+  gather_facts: false
+
+  tasks:
+    - name: General Dependencies
+      apt:
+        state: present
+        name: "{{ item }}"
+      with_items:
+        - apt-transport-https
+        - ca-certificates
+        - build-essential
+        - nload
+        - htop
+        - curl
+        - vim

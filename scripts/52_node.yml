@@ -1,0 +1,39 @@
+# Instalación Node JS
+# ansible-playbook -u root -i inventory.cfg 52_node.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  vars:
+    NODEJS_VERSION: 8
+    DISTRIBUTION_RELEASE: "bionic"
+
+  tasks:
+    - name: Apt Key
+      apt_key:
+        url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+        state: present
+
+    - name: Apt Repository
+      apt_repository:
+        repo: "deb https://deb.nodesource.com/node_{{ NODEJS_VERSION }}.x {{ DISTRIBUTION_RELEASE }} main"
+        state: present
+        update_cache: yes
+
+    - name: Install Node JS
+      apt:
+        name: nodejs
+        state: present
+
+    - name: Install NPM Global Dependencies
+      npm:
+        name: "{{ item }}"
+        global: yes
+      with_items:
+        - ember-cli
+        - bunyan
+        - chai
+        - mocha
+        - jest
+        - eslint

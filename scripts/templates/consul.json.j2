@@ -1,0 +1,13 @@
+{   
+  "data_dir": "/var/lib/consul",  
+  "server": true,
+  "bind_addr": "{{ _ip }}",
+  "client_addr": "0.0.0.0",
+  "log_level": "INFO",
+  "bootstrap_expect": 1,
+  "enable_script_checks": true,
+  "domain": "consul-dev",
+  "ports": {
+      "dns": -1
+  }
+}

@@ -1,0 +1,58 @@
+# Instalación MongoDB
+# ansible-playbook -u root -i inventory.cfg 30_mongodb.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: Apt Key
+      apt_key:
+        keyserver: hkp://keyserver.ubuntu.com:80
+        id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+        state: present
+
+    - name: Apt Repo
+      apt_repository:
+        repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse
+        state: present
+
+    - name: Install Pkgs
+      apt:
+        name: "{{ item }}"
+        force: true
+      with_items:
+        - mongodb-org
+      notify:
+        - mongodb restart
+
+    - name: Fix Mongod System Unit
+      lineinfile:
+        path: /lib/systemd/system/mongod.service
+        regexp: "^After="
+        line: After=network-online.target
+      notify:
+        - systemctl reload
+        - mongodb restart
+
+    - name: Config File
+      lineinfile:
+        path: /etc/mongod.conf
+        regexp: "^  bindIp:"
+        line: "  bindIp: 127.0.0.1, {{ _ip }}"
+      notify:
+        - mongodb restart
+
+  handlers:
+    - name: systemctl reload
+      service:
+        daemon-reload: true
+
+    - name: mongodb restart
+      service:
+        name: mongod
+        enabled: true
+        state: restarted

@@ -1,9 +1,12 @@
 #!/bin/bash
 
 sudo apt-get install -y \
-    vim \
     git \
-    ansible \
+    openssh-server  \
+    software-properties-common \
     cowsay \
-    apt-transport-https \
-    ca-certificates
+    python-pip
+
+sudo pip install setuptools
+sudo pip install wheel
+sudo pip install ansible

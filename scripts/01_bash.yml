@@ -1,0 +1,18 @@
+# Bash Aliases
+# ansible-playbook -u root -i inventory.cfg 01_bash.yml
+
+- hosts: localhost
+  become: false
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Delete Old Bash Aliases Config
+      file:
+        path: $HOME/.bash_aliases
+        state: absent
+
+    - name: Copy Bash Aliases File
+      copy:
+        src: ./bash.cfg
+        dest: ~/.bash_aliases

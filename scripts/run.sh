@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo ansible-playbook -i hosts.cfg $1
+ansible-playbook -u root -i inventory.cfg $1

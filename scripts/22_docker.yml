@@ -1,0 +1,94 @@
+# Instalación Docker
+# ansible-playbook -u root -i inventory.cfg 22_docker.yml
+
+# docker run -d -p 5000:5000 --name registry registry:2
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: Clean Docker Service
+      file:
+        path: /etc/systemd/system/docker.service
+        state: absent
+      notify:
+        - systemctl reload
+
+    - name: Uninstall Docker
+      apt:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - docker
+        - docker-engine
+        - docker.io
+
+    - name: Apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Apt Repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+        state: present
+
+    - name: Install Docker-CE
+      apt:
+        name: "{{ item }}"
+        force: true
+      with_items:
+        - docker-ce
+
+    - name: Systemd Docker Config
+      template:
+        src: docker.json.j2
+        dest: /etc/docker/daemon.json
+      notify:
+        - docker restart
+
+    - name: Download Docker Compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.22.0/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: 0755
+        checksum: sha256:f679a24b93f291c3bffaff340467494f388c0c251649d640e661d509db9d57e9
+
+    - name: Docker Restart
+      service:
+        name: docker
+        state: started
+
+    - name: Registry Container
+      docker_container:
+        name: registry
+        image: registry:2
+        state: started
+        restart_policy: always
+        ports:
+          - "5000:5000"
+
+    - name: Create Group
+      group:
+        name: docker
+        state: present
+
+    - name: Add User Group
+      user:
+        name: "{{ _user }}"
+        append: yes
+        groups:
+          - docker
+
+  handlers:
+    - name: systemctl reload
+      command: systemctl daemon-reload
+
+    - name: docker restart
+      service:
+        name: docker
+        state: restarted

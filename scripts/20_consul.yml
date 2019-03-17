@@ -1,0 +1,108 @@
+# Instalación Consul
+# ansible-playbook -u root -i inventory.cfg 20_consul.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - vars.yml
+
+  vars:
+    CONSUL_INSTALL: true
+    CONSUL_SERVER: true
+    CONSUL_VERSION: 1.2.4
+    CONSUL_SHA: c6413826091f4252eaa83e89f54984cdcc190306908c89cd5f130e2099e3ed0a
+    CONSUL_CLEAN: false
+
+  tasks:
+    - name: Consul Version Installed
+      shell: consul --version | head -1 | egrep -o '([0-9]+\.[0-9]+\.[0-9]+)'
+      register: shell_consul_version
+      changed_when: false
+      failed_when: false
+
+    - name: Consul Is Running
+      shell: systemctl | grep consul | wc -l
+      register: shell_consul_running
+      changed_when: false
+      failed_when: false
+
+    - name: Register Consul Exists Fact
+      set_fact:
+        consul_facts:
+          version: "{{ shell_consul_version.stdout }}"
+          install: "{{ CONSUL_INSTALL }}"
+          reinstall: "{{ shell_consul_version.stdout != CONSUL_VERSION }}"
+          running: "{{ shell_consul_running.stdout == '1' }}"
+          clean: "{{ CONSUL_CLEAN }}"
+          server: "{{ CONSUL_SERVER }}"
+
+    - name: Download
+      get_url:
+        url: "https://releases.hashicorp.com/consul/{{ CONSUL_VERSION }}/consul_{{ CONSUL_VERSION }}_linux_amd64.zip"
+        dest: "/tmp/consul_{{ CONSUL_VERSION }}.zip"
+        checksum: "sha256:{{ CONSUL_SHA }}"
+      when: consul_facts.install
+
+    - name: Clean | Stopped
+      service:
+        name: consul
+        state: stopped
+      when: consul_facts.running
+
+    - name: Clean | Remove Dir
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+        - /var/lib/consul
+        - /etc/consul.d
+        - /usr/bin/consul
+        - /bin/consul
+
+    - name: Create Config Dir
+      file:
+        path: /etc/consul.d
+        state: directory
+      when: consul_facts.install
+
+    - name: Unarchive
+      unarchive:
+        src: "/tmp/consul_{{ CONSUL_VERSION }}.zip"
+        dest: /usr/bin
+        creates: /usr/bin/consul
+        remote_src: yes
+      when: consul_facts.install
+      notify:
+        - consul restart
+
+    - name: Config Systemd
+      template:
+        src: services/consul.service
+        dest: /etc/systemd/system/consul.service
+      when: consul_facts.install
+      notify:
+        - consul restart
+
+    - name: Create Data Dir
+      file:
+        path: /var/lib/consul
+        state: directory
+      when: consul_facts.install
+
+    - name: Config Consul
+      template:
+        src: consul.json.j2
+        dest: /etc/consul.d/config.json
+      notify:
+        - consul restart
+      when: consul_facts.install
+
+  handlers:
+    - name: consul restart
+      service:
+        daemon_reload: true
+        name: consul
+        state: restarted
+        enabled: true

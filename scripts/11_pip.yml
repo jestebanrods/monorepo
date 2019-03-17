@@ -1,0 +1,25 @@
+# Actualiza Paquetes Python
+# ansible-playbook -u root -i inventory.cfg 11_pip.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: Remove
+      pip:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - docker-py
+
+    - name: Update
+      pip:
+        name: "{{ item.n }}"
+        version: "{{ item.v }}"
+        state: present
+      with_items:
+        - { n: "pip", v: 9.0.1 }
+        - { n: "docker", v: 2.1.0 }
+        - { n: "ansible", v: 2.6.2 }
+        - { n: "awscli", v: 1.12.0 }

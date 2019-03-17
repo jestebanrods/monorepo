@@ -1,0 +1,46 @@
+# Instalación PHP
+# ansible-playbook -u root -i inventory.cfg 51_php.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: Install Composer
+      get_url:
+        url: https://getcomposer.org/download/1.8.0/composer.phar
+        dest: /usr/bin/composer
+        mode: a+x
+        checksum: sha256:0901a84d56f6d6ae8f8b96b0c131d4f51ccaf169d491813d2bcedf2a6e4cefa6
+
+    - name: Apt Repository
+      apt_repository:
+        repo: ppa:ondrej/php
+        state: present
+        codename: bionic
+
+    - name: Install Pkgs
+      apt:
+        name: "{{ item }}"
+      with_items:
+        - php7.1
+        - php7.1-common
+        - php7.1-imap
+        - php7.1-odbc
+        - php7.1-soap
+        - php7.1-xml
+        - php7.1-curl
+        - php7.1-mbstring
+        - php7.1-opcache
+        - php7.1-readline
+        - php7.1-cgi
+        - php7.1-dba
+        - php7.1-mcrypt
+        - php7.1-cli
+        - php7.1-dev
+        - php7.1-json
+        - php7.1-redis
+        - php7.1-mysql
+        - php7.1-zip
+        - php-mongodb
+        - php-pear

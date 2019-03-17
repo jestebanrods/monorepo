@@ -1,0 +1,31 @@
+# Configuración Servidor SSH Local
+# sudo ansible-playbook -i inventory.cfg 00_local_ssh.yml
+
+- hosts: localhost
+  become: false
+  connection: local
+  gather_facts: false
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: Create Local Key SSH
+      command: ssh-keygen -f ~/.ssh/id_rsa_local -N ""
+      args:
+        creates: ~/.ssh/id_rsa_local
+
+    - name: Config Key Access
+      file:
+        path: "{{ item }}"
+        owner: "{{ _user }}"
+        group: "{{ _user }}"
+      with_items:
+        - ~/.ssh/id_rsa_local
+        - ~/.ssh/id_rsa_local.pub
+
+    - name: Copy SSH Public Key
+      authorized_key:
+        user: root
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa_local.pub') }}"

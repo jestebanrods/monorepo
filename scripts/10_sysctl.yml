@@ -1,0 +1,22 @@
+# Mejoras En Sysctl
+# ansible-playbook -u root -i inventory.cfg 10_sysctl.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: sysctl
+      sysctl:
+        name: fs.inotify.max_user_watches
+        value: 524288
+        state: present
+
+    - pam_limits:
+        domain: "{{ _user }}"
+        limit_type: "-"
+        limit_item: nofile
+        value: 65535

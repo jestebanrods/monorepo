@@ -10,4 +10,3 @@ sudo modprobe -r rtl8723be
 sudo modprobe rtl8723be
 
 echo "options rtl8723be fwlps=0" | sudo tee /etc/modprobe.d/rtl8723be.conf
-
