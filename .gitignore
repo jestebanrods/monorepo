@@ -1,19 +1,31 @@
+# Images
 *.png
 *.jpg
 *.jpeg
 *.gif
 
+# Videos
 *.avi
 *.flv
 *.mp4
 
+# Audio
 *.mp3
 *.wav
 
+# Packages Dependencies
 vendor
 node_modules
 
+# IDE Files
 *.idea
 *.vscode
 
+# Ansible
 *.retry
+
+# Secrets
+*.key
+*.pem
+*.srl
+*.csr
