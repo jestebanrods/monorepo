@@ -35,12 +35,12 @@
       args:
         creates: "{{ DEST }}/flutter"
 
-    - name: List Bin
+    - name: List Bin Flutter
       command: "ls {{ DEST }}/flutter/bin"
       changed_when: false
       register: list_bin
 
-    - name: Create Links
+    - name: Create Links Flutter
       file:
         state: link
         src: "{{ DEST }}/flutter/bin/{{ item }}"
@@ -56,3 +56,15 @@
         - { p: "{{ DEST }}/flutter/bin/cache/flutter_version_check.stamp", m: 666 }
         - { p: "{{ DEST }}/flutter/bin/cache/lockfile", m: 666 }
         - { p: "{{ DEST }}/flutter/version", m: 666 }
+
+    - name: List Bin Dart
+      command: "ls {{ DEST }}/flutter/bin/cache/dart-sdk/bin"
+      changed_when: false
+      register: list_bin
+
+    - name: Create Links Dart
+      file:
+        state: link
+        src: "{{ DEST }}/flutter/bin/cache/dart-sdk/bin/{{ item }}"
+        dest: "/usr/local/bin/{{ item }}"
+      with_items: "{{ list_bin.stdout_lines }}"
