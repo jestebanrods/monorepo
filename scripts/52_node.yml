@@ -1,5 +1,5 @@
 # Instalación Node JS
-# ansible-playbook -u root -i inventory.cfg 52_node.yml
+# ansible-playbook -i inventory.cfg 52_node.yml
 
 - hosts: localhost
   become: false

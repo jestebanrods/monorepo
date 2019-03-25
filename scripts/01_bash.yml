@@ -1,10 +1,13 @@
 # Bash Aliases
-# ansible-playbook -u root -i inventory.cfg 01_bash.yml
+# ansible-playbook -i inventory.cfg 01_bash.yml
 
 - hosts: localhost
   become: false
   connection: local
   gather_facts: false
+
+  vars:
+    CONFIG: ~/.internal
 
   tasks:
     - name: Delete Old Bash Aliases Config
@@ -16,3 +19,21 @@
       copy:
         src: ./bash.cfg
         dest: ~/.bash_aliases
+
+    - name: Create Internal Dir Home
+      file:
+        state: directory
+        path: "{{ item }}"
+      with_items:
+        - "{{ CONFIG }}"
+
+    - name: Create Bashrc 2
+      template:
+        src: bashrc.j2
+        dest: "{{ CONFIG }}/bashrc.sh"
+
+    - name: Agregamos Al ~/.bashrc
+      lineinfile:
+        state: present
+        line: ". {{ CONFIG }}/bashrc.sh"
+        path: "~/.bashrc"

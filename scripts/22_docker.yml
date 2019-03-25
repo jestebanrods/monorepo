@@ -1,5 +1,5 @@
 # Instalación Docker
-# ansible-playbook -u root -i inventory.cfg 22_docker.yml
+# ansible-playbook -i inventory.cfg 22_docker.yml
 
 # docker run -d -p 5000:5000 --name registry registry:2
 

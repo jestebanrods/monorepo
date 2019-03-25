@@ -1,5 +1,5 @@
 # Instalación MongoDB
-# ansible-playbook -u root -i inventory.cfg 30_mongodb.yml
+# ansible-playbook -i inventory.cfg 30_mongodb.yml
 
 - hosts: localhost
   become: false

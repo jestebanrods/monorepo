@@ -1,5 +1,5 @@
 # Actualiza Paquetes Python
-# ansible-playbook -u root -i inventory.cfg 11_pip.yml
+# ansible-playbook -i inventory.cfg 11_pip.yml
 
 - hosts: localhost
   become: false

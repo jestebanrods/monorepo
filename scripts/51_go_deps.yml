@@ -1,0 +1,16 @@
+# Instalación Go
+# ansible-playbook 51_go_deps.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: Go Get Dependencies
+      command: "{{ item }}"
+      with_items:
+        - "go get -u github.com/golang/dep/cmd/dep"
+        - "go get -u -d github.com/magefile/mage"
+
+    - name: Last Configs
+      shell: cd $HOME/.go/src/github.com/magefile/mage && go run bootstrap.go
