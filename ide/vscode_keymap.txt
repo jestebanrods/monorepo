@@ -1,4 +1,0 @@
-Ctrl + P = Buscar una clase
-Ctrl + Shigt + P = Comandos
-Ctrl + R = Buscar funciones en un archivo
-Ctrl + Shift + R = Buscar funciones en todos los archivos
