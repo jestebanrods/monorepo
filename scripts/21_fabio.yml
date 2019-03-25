@@ -1,0 +1,68 @@
+# Instalación Fabio Reverse Proxy
+# ansible-playbook -u root -i inventory.cfg 21_fabio.yml
+
+- hosts: localhost
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - "{{ inventory_dir }}/vars.yml"
+
+  vars:
+    fabio_name: fabio-dev
+    fabio_addr: "{{ _ip }}:443;cs=jestebanrods,{{ _ip }}:80"
+    fabio_prefix: fabio-dev-
+    fabio_raddr: 9998
+
+  tasks:
+    - name: Download
+      get_url:
+        url: https://github.com/fabiolb/fabio/releases/download/v1.5.9/fabio-1.5.9-go1.10.2-linux_amd64
+        dest: /usr/bin/fabio
+        checksum: sha256:bba27283a09f6473f5e9781a1a30d8fdd9b45912b6c977949fcc8fd8e0ea4763
+      register: download_fabio
+
+    - name: Ejecutable
+      acl:
+        name: /usr/bin/fabio
+        state: present
+        etype: mask
+        permissions: xr
+
+    - name: Create Config Dir
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - /etc/fabio
+        - /etc/fabio/ssl  
+
+    - name: Create Keys SSL
+      command: "./generator.sh /etc/fabio/ssl"
+      args:
+        chdir: "{{ inventory_dir }}/secrets/ssl/"
+      notify: 
+        - restart fabio
+
+    - name: Config Properties
+      template:
+        src: templates/fabio.properties.j2
+        dest: /etc/fabio/fabio.properties
+        mode: 0444
+      notify: restart fabio
+
+    - name: Systemd Config
+      template:
+        src: services/fabio.service
+        dest: /etc/systemd/system/fabio.service
+        mode: 0444
+      notify:
+        - restart fabio
+
+  handlers:
+    - name: restart fabio
+      service:
+        daemon_reload: true
+        enabled: true
+        name: fabio
+        state: restarted

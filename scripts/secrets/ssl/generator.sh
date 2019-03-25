@@ -2,6 +2,11 @@
 # Crea Certificado Firmado CA
 
 DEST="./"
+
+if [ ! -z "$1" ]; then
+  DEST=$1
+fi
+
 NAME="dev"
 PASS="1234"
 

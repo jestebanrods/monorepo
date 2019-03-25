@@ -1,12 +1,12 @@
 # Mejoras En Sysctl
-# ansible-playbook -i inventory.cfg 10_sysctl.yml
+# ansible-playbook -u root -i inventory.cfg 10_sysctl.yml
 
 - hosts: localhost
   become: false
   gather_facts: false
 
   vars_files:
-    - vars.yml
+    - "{{ inventory_dir }}/vars.yml"
 
   tasks:
     - name: sysctl

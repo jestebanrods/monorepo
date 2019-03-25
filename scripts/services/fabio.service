@@ -1,0 +1,13 @@
+[Unit]
+Description=fabio reverse proxy
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/fabio -cfg /etc/fabio/fabio.properties
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

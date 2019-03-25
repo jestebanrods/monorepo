@@ -1,5 +1,5 @@
 # Instalación Go
-# ansible-playbook -i inventory.cfg 50_go.yml
+# ansible-playbook -u root -i inventory.cfg 50_go.yml
 
 - hosts: localhost
   become: false

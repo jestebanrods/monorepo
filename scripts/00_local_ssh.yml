@@ -1,5 +1,5 @@
 # Configuración Servidor SSH Local
-# sudo ansible-playbook -i inventory.cfg 00_local_ssh.yml
+# sudo ansible-playbook -u root -i inventory.cfg 00_local_ssh.yml
 
 - hosts: localhost
   become: false
@@ -7,7 +7,7 @@
   gather_facts: false
 
   vars_files:
-    - vars.yml
+    - "{{ inventory_dir }}/vars.yml"
 
   tasks:
     - name: Create Local Key SSH

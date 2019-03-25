@@ -1,5 +1,5 @@
 # Bash Aliases
-# ansible-playbook -i inventory.cfg 01_bash.yml
+# ansible-playbook -u root -i inventory.cfg 01_bash.yml
 
 - hosts: localhost
   become: false

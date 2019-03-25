@@ -1,5 +1,5 @@
 # Instalación PHP
-# ansible-playbook -i inventory.cfg 54_php.yml
+# ansible-playbook -u root -i inventory.cfg 54_php.yml
 
 - hosts: localhost
   become: false

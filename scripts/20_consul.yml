@@ -1,12 +1,12 @@
 # Instalación Consul
-# ansible-playbook -i inventory.cfg 20_consul.yml
+# ansible-playbook -u root -i inventory.cfg 20_consul.yml
 
 - hosts: localhost
   become: false
   gather_facts: false
 
   vars_files:
-    - vars.yml
+    - "{{ inventory_dir }}/vars.yml"
 
   vars:
     CONSUL_INSTALL: true

@@ -1,0 +1,20 @@
+proxy.cs = cs=jestebanrods;\
+           type=path;\
+           cert=/etc/fabio/ssl;
+           refresh=0           
+
+proxy.addr = {{ fabio_addr }}
+
+proxy.localip = {{ ansible_host }}
+
+log.access.target = stdout
+
+registry.consul.tagprefix = {{ fabio_prefix }}
+
+registry.consul.register.addr = :{{ fabio_raddr }}
+
+registry.consul.register.name = {{ fabio_name }}
+
+ui.addr = :{{ fabio_raddr }}
+
+ui.title = {{ fabio_name }}
