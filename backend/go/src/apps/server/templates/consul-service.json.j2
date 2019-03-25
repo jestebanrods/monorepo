@@ -1,0 +1,16 @@
+{
+    "service": {
+        "id":"{{ inventory_hostname }}-lostaxis-{{ item.value.name | default (item.key) }}",
+        "name": "lostaxis-{{ item.value.name | default (item.key) }}",
+        "tags": [           
+           "{{ FABIO_EXT }}-{{ item.value.name | default (item.key) }}.{{ FABIO_EXT_DOM }}/"
+        ],        
+        "port": {{ item.value.port_www }},
+        "check": {
+            "name": "status {{ item.value.name | default (item.key) }}",
+            "http": "http://{{ansible_ssh_host}}:{{item.value.port_www}}/from_consul.ping",
+            "interval": "10s",
+    	    "timeout": "2s"
+        }
+     }
+}

@@ -1,0 +1,12 @@
+- name: "consul config -> {{item.key}}"
+  template:
+    src: "{{j2}}"
+    dest: "/etc/consul.d/lostaxis-{{item.key}}.json"
+  with_first_found:
+    - files:
+        - "{{item.key}}.json.j2"
+        - "lostaxis-service.json.j2"
+  loop_control:
+    loop_var: j2
+  notify:
+    - consul reload

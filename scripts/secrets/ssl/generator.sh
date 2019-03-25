@@ -17,4 +17,5 @@ openssl genrsa -out $DEST/$NAME.key 2048
 openssl req -key $DEST/$NAME.key -new -out $DEST/$NAME.csr -config config.csr.cnf
 
 # Creamos CRT Servidor Web
-openssl x509 -req -in $DEST/$NAME.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -passin pass:$PASS -CAcreateserial -out $DEST/$NAME.pem -days 3650 -extfile config.crt.cnf
+openssl x509 -req -in $DEST/$NAME.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -passin pass:$PASS -CAcreateserial -out $DEST/$NAME-cert.pem -days 3650 -extfile config.crt.cnf
+

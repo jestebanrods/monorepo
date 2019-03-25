@@ -29,7 +29,7 @@
 
     - name: Create Bashrc 2
       template:
-        src: bashrc.j2
+        src: bashrc.sh.j2
         dest: "{{ CONFIG }}/bashrc.sh"
 
     - name: Agregamos Al ~/.bashrc

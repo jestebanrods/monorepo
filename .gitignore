@@ -26,3 +26,4 @@ node_modules
 
 # Go Packages
 pkg
+bin
