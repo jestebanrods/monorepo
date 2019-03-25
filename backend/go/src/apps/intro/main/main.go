@@ -1,7 +1,7 @@
 package main
 
 import (
-	"app/models"
+	"apps/intro/models"
 	"fmt"
 )
 
