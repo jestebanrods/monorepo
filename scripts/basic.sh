@@ -5,7 +5,8 @@ sudo apt-get install -y \
     openssh-server  \
     software-properties-common \
     cowsay \
-    python-pip
+    python-pip \
+    lib32stdc++6
 
 sudo pip install setuptools
 sudo pip install wheel
